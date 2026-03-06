@@ -73,7 +73,7 @@ After Step 3, register the new client domain in the centralized forms service. S
 
 ## Step 4 — Autonomous Agents
 
-Run these four bash commands one at a time, in order. Wait for each to finish before running the next. Substitute `CLIENT_NAME` with the actual folder name.
+Run these four bash commands one at a time, in order. Wait for each to finish before running the next. Set a timeout for each task to 60 minutes. Substitute `CLIENT_NAME` with the actual folder name.
 
 ```
 WORK=/Users/brandonhopkins/Projects/CLIENT_NAME/agents/design-agent MODEL="sonnet" MAX_LOOPS=5 bash ~/Projects/claude-lab/ENGINE/run.sh

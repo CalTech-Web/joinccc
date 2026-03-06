@@ -150,23 +150,28 @@
 
 ### [Client First Name] [Last Initial]. - [Title], [Company Name]
 > "[Full testimonial quote from the client]"
+- Headshot: `/public/images/testimonials/[firstname-lastinitial].webp`
 - Case: [One-sentence description of the client's challenge or situation before working with you]
 - Result: [One-sentence description of the measurable outcome]
 
 ### [Client First Name] [Last Initial]. - [Title], [Company Name]
 > "[Full testimonial quote from the client]"
+- Headshot: `/public/images/testimonials/[firstname-lastinitial].webp`
 - Case: [One-sentence description of the client's challenge]
 - Result: [One-sentence description of the measurable outcome]
 
 ### [Client First Name] [Last Initial]. - [Title], [Company Name]
 > "[Full testimonial quote from the client]"
+- Headshot: `/public/images/testimonials/[firstname-lastinitial].webp`
 - Case: [One-sentence description of the client's challenge]
 - Result: [One-sentence description of the measurable outcome]
 
 ### [Client First Name] [Last Initial]. - [Title], [Company Name]
 > "[Full testimonial quote from the client]"
+- Headshot: `/public/images/testimonials/[firstname-lastinitial].webp`
 
 > Include 3-6 testimonials. Each should have a quote, and ideally a case summary and result. Use first name and last initial for privacy.
+> **Headshots:** For each testimonial, find a headshot photo of the person (LinkedIn, company website, social media) and save it as a WebP file in `/public/images/testimonials/`. Use the naming convention `firstname-lastinitial.webp` (e.g., `john-d.webp`). If no photo is available, note `Headshot: none` and the component will render initials instead.
 
 ---
 
