@@ -48,3 +48,32 @@ Submissions with `source: "support"` are routed to support@caltechweb.com instea
 - CORS restricts requests to registered domains and Vercel previews
 - Rate limited to 5 submissions per IP per hour
 - No per-client API keys needed — the single `RESEND_API_KEY` is set on the forms service only
+
+## Turnstile CAPTCHA
+
+All client sites use Cloudflare Turnstile for bot protection. Widgets for all existing sites are pre-created. When adding a new site, ask Claude Code to create a Turnstile widget for it.
+
+To enable Turnstile on a site, two things must happen in order:
+
+**1. Frontend (employee adds to the client site):**
+
+Add before `</head>`:
+```html
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+```
+
+Add inside the `<form>`, just before the submit button:
+```html
+<div class="cf-turnstile" data-sitekey="SITEKEY_FOR_THIS_DOMAIN"></div>
+```
+
+If the form submits via JavaScript, also pass the token:
+```js
+turnstileToken: document.querySelector('[name="cf-turnstile-response"]')?.value
+```
+
+**2. Backend (tell Claude Code):**
+
+Once the frontend is live and tested, tell Claude Code: "Enable Turnstile for [domain]" — Claude will add the secret key to `sites.ts` and deploy automatically.
+
+Do not add the backend secret before the frontend widget is in place, or the form will reject all submissions.
