@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CallbackForm from "@/components/CallbackForm";
+import FAQAccordion from "@/components/FAQAccordion";
 
 const services = [
   {
@@ -297,14 +298,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Frequently Asked Questions</h2>
             <p className="text-gray-600">Get answers to common questions about our services and eligibility.</p>
           </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="font-bold text-[#1E2828] mb-2">{faq.q}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
