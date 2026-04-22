@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --brand-teal: #23779B;
+  --brand-dark: #1E2828;
+  --brand-card: #F4F8FC;
+}
+
+body {
+  font-family: 'Ubuntu', system-ui, sans-serif;
+  color: #1E2828;
+  background: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu', system-ui, sans-serif;
+}
