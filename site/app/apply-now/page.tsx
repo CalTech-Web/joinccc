@@ -4,22 +4,55 @@ import ApplicationForm from "@/components/ApplicationForm";
 export const metadata: Metadata = {
   title: "Apply Now",
   description:
-    "Apply for CalAIM Community Supports services including housing navigation, Enhanced Care Management, and cash assistance vouchers. Qualifying Medi-Cal members can apply online.",
+    "Apply for free CalAIM housing support in Southern California. Qualifying Medi-Cal members can receive housing navigation, up to $5,000 in move-in funds, and Enhanced Care Management at no cost.",
   alternates: {
     canonical: "/apply-now",
   },
+  openGraph: {
+    type: "website",
+    url: "https://joinccc.org/apply-now",
+    title: "Apply Now | California Care Coordinators",
+    description:
+      "Apply online for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for qualifying Medi-Cal members in Southern California.",
+    images: [
+      {
+        url: "/logos/ccc-logo-blue-fullres.png",
+        alt: "California Care Coordinators",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apply Now | California Care Coordinators",
+    description:
+      "Apply online for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for qualifying Medi-Cal members.",
+    images: ["/logos/ccc-logo-blue-fullres.png"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joinccc.org" },
+    { "@type": "ListItem", "position": 2, "name": "Apply Now", "item": "https://joinccc.org/apply-now" },
+  ],
 };
 
 export default function ApplyNowPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Page Header */}
       <section
         className="py-16"
         style={{ background: "linear-gradient(135deg, #23779B 0%, #1E2828 100%)" }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">The Application Takes Five Minutes</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Apply for CalAIM Housing Support in Five Minutes</h1>
           <p className="text-white/85 text-lg leading-relaxed max-w-2xl mx-auto">
             A CCC case manager will review your information and reach out within one to two business days. If your situation is urgent, call (888) 582-2282 directly.
           </p>

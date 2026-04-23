@@ -8,11 +8,44 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/tos-privacy-policy",
   },
+  openGraph: {
+    type: "website",
+    url: "https://joinccc.org/tos-privacy-policy",
+    title: "Terms of Service & Privacy Policy | California Care Coordinators",
+    description:
+      "Read the Terms of Service and Privacy Policy for California Care Coordinators. Learn how we protect your personal information under HIPAA and CCPA.",
+    images: [
+      {
+        url: "/logos/ccc-logo-blue-fullres.png",
+        alt: "California Care Coordinators",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Service & Privacy Policy | California Care Coordinators",
+    description:
+      "Read the Terms of Service and Privacy Policy for California Care Coordinators. Your information is protected under HIPAA and CCPA.",
+    images: ["/logos/ccc-logo-blue-fullres.png"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joinccc.org" },
+    { "@type": "ListItem", "position": 2, "name": "Terms of Service & Privacy Policy", "item": "https://joinccc.org/tos-privacy-policy" },
+  ],
 };
 
 export default function TosPrivacyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Page Header */}
       <section
         className="py-16"

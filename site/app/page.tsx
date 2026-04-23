@@ -126,6 +126,59 @@ const organizationSchema = {
   "description":
     "California Care Coordinators is a Santa Ana-based Medi-Cal CalAIM provider delivering housing navigation, enhanced care management, and cash assistance vouchers to help qualifying members achieve and sustain stable housing.",
   "foundingDate": "2023",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+18885822282",
+    "contactType": "customer service",
+    "areaServed": "US",
+    "availableLanguage": "English",
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "CalAIM Community Supports Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Housing Navigation",
+          "description": "Dedicated case management for up to 12 months helping qualifying Medi-Cal members secure an approved residential lease.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Housing Deposit Voucher",
+          "description": "Covers security deposit and first month's rent up to $5,000 for qualifying Medi-Cal members. Once-per-member-per-lifetime benefit.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tenancy Sustaining",
+          "description": "Up to 12 months of continued case management support after housing is secured to help members maintain their tenancy.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cash Assistance Vouchers",
+          "description": "Monthly cash assistance for up to 12 months for qualifying low-income Medi-Cal members based on MBSAC household income levels.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Enhanced Care Management",
+          "description": "A dedicated personal healthcare advocate coordinates appointments, referrals, and healthcare paperwork for qualifying Medi-Cal members for up to 12 months.",
+        },
+      },
+    ],
+  },
 };
 
 const faqSchema = {
