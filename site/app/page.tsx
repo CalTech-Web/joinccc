@@ -363,10 +363,10 @@ export default function HomePage() {
                 CalAIM Community Supports Provider
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Free Housing Support, a Personal Case Manager, and Move-In Funds. All Through Medi-Cal.
+                Free Housing, a Case Manager, and Move-In Funds. Through Medi-Cal.
               </h1>
               <p className="text-white/85 text-lg leading-relaxed mb-8">
-                You may already qualify for a personal case manager, up to $5,000 in move-in costs, and monthly cash assistance, all through your existing Medi-Cal benefits. California Care Coordinators connects eligible members to these CalAIM housing supports at no cost.
+                Qualifying Medi-Cal members get a personal case manager, up to $5,000 in move-in costs, and monthly cash assistance at no cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
