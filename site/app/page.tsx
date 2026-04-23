@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CallbackForm from "@/components/CallbackForm";
 import FAQAccordion from "@/components/FAQAccordion";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const services = [
   {
@@ -435,7 +436,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {metrics.map((m) => (
               <div key={m.label} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-[#23779B] mb-2">{m.value}</div>
+                <AnimatedCounter value={m.value} className="text-4xl sm:text-5xl font-bold text-[#23779B] mb-2" />
                 <div className="text-sm text-gray-500 font-medium">{m.label}</div>
               </div>
             ))}
@@ -652,7 +653,7 @@ export default function HomePage() {
                 { value: "60+", label: "Case Managers on Staff", color: "bg-[#23779B]" },
               ].map((stat) => (
                 <div key={stat.label} className={`${stat.color} text-white rounded-2xl p-7 flex flex-col justify-between`}>
-                  <div className="text-4xl sm:text-5xl font-bold mb-3">{stat.value}</div>
+                  <AnimatedCounter value={stat.value} className="text-4xl sm:text-5xl font-bold mb-3" />
                   <div className="text-white/70 text-sm font-medium leading-snug">{stat.label}</div>
                 </div>
               ))}
