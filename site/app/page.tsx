@@ -28,7 +28,7 @@ const services = [
   {
     title: "Cash Assistance Vouchers",
     description:
-      "Qualifying low-income members receive monthly cash payments based on MBSAC household income levels. Twelve months of additional financial support while you stabilize.",
+      "Qualifying low-income members receive monthly cash payments based on Medi-Cal income guidelines for low-income households. Twelve months of additional support while you stabilize.",
     image: "/products/cash-assistance-vouchers.png",
     alt: "Cash Assistance Vouchers",
   },
@@ -152,7 +152,7 @@ export default function HomePage() {
       <section className="py-16 bg-[#F4F8FC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Our Impact</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Results Since 2023</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               600 people have signed a lease through CCC since 2023. Another 3,000 are working toward one right now, each with a dedicated case manager.
             </p>
@@ -251,7 +251,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-6">Why Choose California Care Coordinators?</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-6">A Person, Not a Packet</h2>
               <div className="space-y-5 text-gray-700 leading-relaxed">
                 <p>Most housing programs pass you through a waiting list and hand you a packet. CCC assigns you a person.</p>
                 <p>Your case manager handles the housing search, coordinates with local housing authorities, and manages the paperwork so you don&apos;t have to. If you qualify for the Housing Deposit Voucher, we&apos;ll cover your security deposit and first month&apos;s rent, up to $5,000. Monthly cash assistance is available for low-income members on top of that.</p>
