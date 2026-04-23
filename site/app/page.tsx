@@ -50,10 +50,10 @@ const services = [
 ];
 
 const metrics = [
-  { image: "/gallery/metric-3000-active-members.png", alt: "3,000+ Active Members Served", label: "Active Members Served", value: "3,000+" },
-  { image: "/gallery/metric-60-case-managers.png", alt: "60+ Case Managers", label: "Case Managers on Staff", value: "60+" },
-  { image: "/gallery/metric-600-members-housed.png", alt: "600+ Members Housed", label: "Members Successfully Housed", value: "600+" },
-  { image: "/gallery/metric-1.7m-vouchers.png", alt: "$1.7M+ in Vouchers", label: "Total Vouchers Funded", value: "$1.7M+" },
+  { label: "Active Members Served", value: "3,000+" },
+  { label: "Case Managers on Staff", value: "60+" },
+  { label: "Members Successfully Housed", value: "600+" },
+  { label: "Total Vouchers Funded", value: "$1.7M+" },
 ];
 
 const partners = [
@@ -406,16 +406,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {metrics.map((m) => (
-              <div key={m.label} className="bg-white rounded-2xl shadow-sm p-6 flex flex-col items-center text-center">
-                <Image
-                  src={m.image}
-                  alt={m.alt}
-                  width={120}
-                  height={120}
-                  className="hidden sm:block w-24 h-24 object-contain mb-4"
-                />
-                <div className="text-3xl font-bold text-[#23779B] mb-1">{m.value}</div>
-                <div className="text-sm text-gray-600 font-medium">{m.label}</div>
+              <div key={m.label} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center">
+                <div className="text-4xl sm:text-5xl font-bold text-[#23779B] mb-2">{m.value}</div>
+                <div className="text-sm text-gray-500 font-medium">{m.label}</div>
               </div>
             ))}
           </div>
