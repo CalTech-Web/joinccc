@@ -412,7 +412,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Callback Form */}
-            <div className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto mt-8 lg:mt-0 border-t border-white/20 pt-8 lg:border-0 lg:pt-0">
+            <div id="callback-form" className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto mt-8 lg:mt-0 border-t border-white/20 pt-8 lg:border-0 lg:pt-0">
               <CallbackForm />
             </div>
           </div>
@@ -472,6 +472,13 @@ export default function HomePage() {
       </section>
 
       {/* ── How It Works ── */}
+      <style>{`
+        @keyframes step-glow {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.1); background: rgba(255,255,255,0.18); }
+          50% { box-shadow: 0 0 28px 6px rgba(255,255,255,0.2); background: rgba(255,255,255,0.28); }
+        }
+        .step-active { animation: step-glow 2.8s ease-in-out infinite; }
+      `}</style>
       <section className="py-16" style={{ background: "linear-gradient(135deg, #23779B 0%, #1a5a75 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -480,27 +487,60 @@ export default function HomePage() {
               Five steps from application to a signed lease. Most applicants hear back within one to two business days.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+          {/* Progress track — desktop only */}
+          <div className="hidden lg:flex items-center justify-center mb-6">
             {steps.map((s, i) => (
-              <div
-                key={s.step}
-                className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center${i === 4 ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : ""}`}
-              >
-                <div className="w-12 h-12 bg-white text-[#23779B] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+              <div key={s.step} className="flex items-center">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${i === 0 ? "bg-white text-[#23779B] ring-4 ring-white/30" : "bg-white/20 text-white/60"}`}>
                   {s.step}
                 </div>
-                <h3 className="text-white font-bold mb-2">{s.title}</h3>
-                <p className="text-white/75 text-sm leading-relaxed">{s.description}</p>
+                {i < steps.length - 1 && (
+                  <div className={`h-0.5 w-20 ${i === 0 ? "bg-white/60" : "bg-white/20"}`} />
+                )}
               </div>
             ))}
           </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {steps.map((s, i) => {
+              const inner = (
+                <>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ${i === 0 ? "bg-white text-[#23779B]" : "bg-white/20 text-white"}`}>
+                    {s.step}
+                  </div>
+                  {i === 0 && (
+                    <span className="inline-block text-white/60 text-xs font-semibold uppercase tracking-widest mb-2">You Are Here</span>
+                  )}
+                  <h3 className="text-white font-bold mb-2">{s.title}</h3>
+                  <p className="text-white/75 text-sm leading-relaxed">{s.description}</p>
+                </>
+              );
+              return i === 0 ? (
+                <a
+                  key={s.step}
+                  href="#callback-form"
+                  className={`step-active border border-white/30 rounded-2xl p-6 text-center block cursor-pointer${i === 4 ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : ""}`}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div
+                  key={s.step}
+                  className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center${i === 4 ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : ""}`}
+                >
+                  {inner}
+                </div>
+              );
+            })}
+          </div>
           <div className="text-center mt-10">
-            <Link
-              href="/apply-now"
+            <a
+              href="#callback-form"
               className="inline-block bg-white text-[#23779B] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Start Your Application
-            </Link>
+              Check If I Qualify — It&apos;s Free
+            </a>
           </div>
         </div>
       </section>
