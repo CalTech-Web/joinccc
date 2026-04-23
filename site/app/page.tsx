@@ -66,9 +66,9 @@ const partners = [
 
 const steps = [
   { step: "1", title: "Apply", description: "Fill out the online application in about five minutes. You'll need your name, contact info, IEHP ID, and a brief description of your current housing situation." },
-  { step: "2", title: "Eligibility Review", description: "CCC reviews your application against CalAIM eligibility criteria. Most applicants hear back within one to two business days." },
-  { step: "3", title: "Case Manager Assignment", description: "If you qualify, a dedicated case manager is assigned to your case. They become your single point of contact for housing, healthcare, and every enrolled service." },
-  { step: "4", title: "Housing Navigation", description: "Your case manager works the housing search and handles coordination with landlords and housing authorities on your behalf, working toward an approved residential lease." },
+  { step: "2", title: "Eligibility Review", description: "CCC reviews your application to confirm you qualify. Most applicants hear back within one to two business days." },
+  { step: "3", title: "Case Manager Assignment", description: "If you qualify, a dedicated case manager is assigned to you. They become your single point of contact for housing, healthcare, and every enrolled service." },
+  { step: "4", title: "Housing Navigation", description: "Your case manager works the housing search and handles coordination with landlords and housing authorities until you have an approved lease." },
   { step: "5", title: "Sustained Support", description: "Once you're housed, support continues for up to 12 more months. Tenancy Sustaining keeps you connected to your case manager so your housing stays stable." },
 ];
 
@@ -154,7 +154,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Results Since 2023</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              600 people have signed a lease through CCC since 2023. Another 3,000 are working toward one right now, each with a dedicated case manager.
+              Most of these members had Medi-Cal for years before learning these services were included in their existing coverage.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -179,7 +179,7 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Provider Services</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">What&apos;s Covered</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Six programs, one goal: get you into a stable home and keep you there.
             </p>
@@ -296,7 +296,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#1E2828] mb-3">Valued Partners</h2>
-            <p className="text-gray-600">CCC coordinates with housing authorities and federal agencies that have real power to open doors for members.</p>
+            <p className="text-gray-600">The vouchers, the funding, and the regional relationships that get members housed run through these organizations.</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {partners.map((p) => (
