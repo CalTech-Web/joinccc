@@ -57,3 +57,24 @@ Deployed and Ready. Four targeted heading changes shipped:
 
 Live at `https://site-seven-beta-77.vercel.app`.
 [2026-04-22 19:58:11] Run #4 finished
+Deployed and Ready. Four heading changes shipped:
+
+- **Hero H1** — Was a dry category label ("Housing Support & Care Coordination for Medi-Cal Members"). Now leads with the free benefit: "Free Housing Support, a Personal Case Manager, and Move-In Funds. All Through Medi-Cal."
+- **FAQ heading** — "Frequently Asked Questions" → "Common Questions." Drops the form-label voice.
+- **Apply Now H1** — "Apply Now" was a button label, not a page headline. Now reads "The Application Takes Five Minutes," which sets expectation and mirrors the homepage bottom CTA.
+- **Form title** — "Membership Application" → "Your Application." Warmer and less bureaucratic.
+
+Live at `https://site-seven-beta-77.vercel.app`.
+[2026-04-22 20:01:58] Run #4 finished
+[2026-04-22 20:02:03] Run #5 starting (model: sonnet)
+Deployed and Ready. Six targeted changes shipped:
+
+- **Metrics subtitle** — stopped restating the card numbers. New line explains the insight gap: "Most of these members had Medi-Cal for years before learning these services were included in their existing coverage." That's the story worth telling above four number cards.
+- **"Provider Services" heading** — renamed to "What's Covered." Drops the internal program-management label in favor of a member-facing frame.
+- **Partners subtitle** — cut the "real power to open doors" cliché. Replaced with what's actually true: "The vouchers, the funding, and the regional relationships that get members housed run through these organizations."
+- **How It Works Step 2** — removed "CalAIM eligibility criteria" jargon. Now reads: "CCC reviews your application to confirm you qualify."
+- **How It Works Step 3** — "assigned to your case" → "assigned to you." One word, warmer.
+- **How It Works Step 4** — cut the trailing "working toward an approved residential lease" in favor of "until you have an approved lease." Shorter, more direct, no bureaucratic passive construction.
+
+Live at `https://site-mnyc21ux5-brandon-7928s-projects.vercel.app`.
+[2026-04-22 20:15:00] Run #5 finished
