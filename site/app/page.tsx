@@ -7,42 +7,42 @@ const services = [
   {
     title: "Housing Navigation",
     description:
-      "Dedicated, comprehensive, and ongoing case management for qualified Medi-Cal members with the primary goal of securing an approved residential lease. Duration: 12 months.",
+      "Your assigned case manager works the housing search for up to 12 months, coordinating with landlords and housing authorities on your behalf. One goal, an approved lease in your name.",
     image: "/products/housing-navigation.png",
     alt: "Housing Navigation",
   },
   {
     title: "Housing Deposit Voucher",
     description:
-      "Covers initial move-in costs including security deposit and first month's rent, up to $5,000. A once-per-member-per-lifetime benefit. Terms and conditions apply.",
+      "The deposit and first month's rent are often what stand between a qualified member and a signed lease. This voucher covers both, up to $5,000. Available once per member, per lifetime. Terms and conditions apply.",
     image: "/products/housing-deposit-voucher.png",
     alt: "Housing Deposit Voucher",
   },
   {
     title: "Tenancy Sustaining",
     description:
-      "Continued dedicated case management after housing is secured, focused on sustaining the established tenancy for the duration of the lease and beyond. Duration: 12 months.",
+      "Getting housed is step one. Staying housed takes continued support. Your case manager stays on for up to 12 more months to help you maintain the tenancy you worked to secure.",
     image: "/products/tenancy-sustaining.png",
     alt: "Tenancy Sustaining",
   },
   {
     title: "Cash Assistance Vouchers",
     description:
-      "Monthly cash assistance for qualifying members based on Minimum Basic Standard of Adequate Care household income levels. Duration: 12 months.",
+      "Qualifying low-income members receive monthly cash payments based on MBSAC household income levels. Twelve months of additional financial support while you stabilize.",
     image: "/products/cash-assistance-vouchers.png",
     alt: "Cash Assistance Vouchers",
   },
   {
     title: "Enhanced Care Management",
     description:
-      "CCC staff act as Personal Healthcare Assistants for qualified members, helping manage the ongoing administrative demands of their healthcare needs. Duration: 12 months.",
+      "Managing appointments, referrals, and healthcare paperwork is a job in itself. Your CCC care manager handles that coordination for you, acting as a dedicated advocate for up to 12 months.",
     image: "/products/enhanced-care-management.png",
     alt: "Enhanced Care Management",
   },
   {
     title: "Day-Habilitation",
     description:
-      "Coming soon: In-person coaching by a specialized caregiver for housed members who qualify. Teaches social and administrative skills necessary for independent living.",
+      "In-person coaching for housed members who qualify. A specialized caregiver works with you on financial planning, agency correspondence, and the practical skills independent living requires. Coming soon.",
     image: "/products/day-habilitation.png",
     alt: "Day-Habilitation",
     comingSoon: true,
@@ -65,37 +65,37 @@ const partners = [
 ];
 
 const steps = [
-  { step: "1", title: "Apply", description: "Submit your application at joinccc.org/apply-now with your name, contact info, IEHP ID, and housing status details." },
-  { step: "2", title: "Eligibility Review", description: "CCC reviews your application to confirm you meet CalAIM Community Supports eligibility, including homelessness risk and chronic condition factors." },
-  { step: "3", title: "Case Manager Assignment", description: "A dedicated case manager is assigned to act as your personal advocate and coordinate all housing and healthcare services." },
-  { step: "4", title: "Housing Navigation", description: "Your case manager actively works to secure an approved residential lease over a 12-month engagement." },
-  { step: "5", title: "Sustained Support", description: "Once housed, Tenancy Sustaining services continue for up to 12 months to ensure stable long-term residency and independent living." },
+  { step: "1", title: "Apply", description: "Fill out the online application in about five minutes. You'll need your name, contact info, IEHP ID, and a brief description of your current housing situation." },
+  { step: "2", title: "Eligibility Review", description: "CCC reviews your application against CalAIM eligibility criteria. Most applicants hear back within one to two business days." },
+  { step: "3", title: "Case Manager Assignment", description: "If you qualify, a dedicated case manager is assigned to your case. They become your single point of contact for housing, healthcare, and every enrolled service." },
+  { step: "4", title: "Housing Navigation", description: "Your case manager works the housing search and handles coordination with landlords and housing authorities on your behalf, working toward an approved residential lease." },
+  { step: "5", title: "Sustained Support", description: "Once you're housed, support continues for up to 12 more months. Tenancy Sustaining keeps you connected to your case manager so your housing stays stable." },
 ];
 
 const faqs = [
   {
     q: "Who qualifies for CCC's services?",
-    a: "Qualifying individuals must be Medi-Cal recipients who are experiencing homelessness, at risk of homelessness, or recently institutionalized. Applicants must also have an IEHP ID number and may be asked about chronic physical or psychological conditions.",
+    a: "Medi-Cal members who are homeless, at risk of homelessness, or recently institutionalized. You'll need an IEHP ID number to apply, and some applicants may be asked about chronic health conditions. If you're not sure whether you qualify, call (888) 582-2282 and a team member can walk you through it.",
   },
   {
     q: "How do I apply?",
-    a: 'Applications are submitted online at joinccc.org/apply-now. You can also call (888) 582-2282 for assistance.',
+    a: "The online application at joinccc.org/apply-now takes about five minutes. You'll need your name, phone, address, IEHP ID, and a brief description of your housing situation. If you'd rather talk to someone first, call (888) 582-2282.",
   },
   {
     q: "What is the Housing Deposit Voucher and how much is it?",
-    a: "The Housing Deposit Voucher covers initial move-in costs such as security deposit and first month's rent, up to $5,000. It is a once-per-member-per-lifetime benefit. Terms and conditions apply.",
+    a: "The voucher covers your security deposit and first month's rent, up to $5,000 total. It removes the upfront cash barrier that prevents most low-income applicants from signing a lease. This benefit is available once per member, per lifetime. Terms and conditions apply.",
   },
   {
     q: "How long do services last?",
-    a: "Most services including Housing Navigation, Tenancy Sustaining, Cash Assistance Vouchers, and Enhanced Care Management run for 12-month terms. The Housing Deposit Voucher is a one-time benefit.",
+    a: "Housing Navigation, Tenancy Sustaining, Enhanced Care Management, and Cash Assistance Vouchers each run for 12-month terms. The Housing Deposit Voucher is a single-use benefit. Day-Habilitation duration is still being finalized.",
   },
   {
     q: "What is CalAIM and how does it relate to CCC?",
-    a: "CalAIM (California Advancing and Innovating Medi-Cal) is a statewide initiative by the California Department of Health Care Services that expands Medi-Cal to include Community Supports. CCC is an approved provider delivering these services to eligible members.",
+    a: "CalAIM, short for California Advancing and Innovating Medi-Cal, is a state initiative that expanded Medi-Cal to include housing-related services. CCC is an approved CalAIM provider, which is why its services are available through your existing Medi-Cal benefits at no cost.",
   },
   {
     q: "Are CCC's services free to members?",
-    a: "CCC's services are funded through Medi-Cal as CalAIM Community Supports. Qualifying members receive services at no direct cost. Contact CCC at (888) 582-2282 or apply@joinccc.org to confirm eligibility.",
+    a: "Yes. CCC's services are funded through Medi-Cal under the CalAIM program. There is no cost to qualifying members. To confirm your eligibility, call (888) 582-2282 or email apply@joinccc.org.",
   },
 ];
 
@@ -119,7 +119,7 @@ export default function HomePage() {
                 Housing Support &amp; Care Coordination for Medi-Cal Members
               </h1>
               <p className="text-white/85 text-lg leading-relaxed mb-8">
-                California Care Coordinators delivers housing navigation, Enhanced Care Management, and cash assistance vouchers to help qualifying Medi-Cal members achieve and sustain stable housing.
+                You may already qualify for a personal case manager, up to $5,000 in move-in costs, and monthly cash assistance, all through your existing Medi-Cal benefits. California Care Coordinators connects eligible members to these CalAIM housing supports at no cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -154,7 +154,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Our Impact</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Since 2023, CCC has helped thousands of Medi-Cal members find stable housing and quality care coordination.
+              600 people have signed a lease through CCC since 2023. Another 3,000 are working toward one right now, each with a dedicated case manager.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -221,7 +221,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">How It Works</h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              Getting started with CCC is simple. Here is what to expect from application to stable housing.
+              Five steps from application to a signed lease. Most applicants hear back within one to two business days.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -252,22 +252,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-6">Why Choose California Care Coordinators?</h2>
-              <ul className="space-y-4">
-                {[
-                  "Certified CalAIM Community Supports provider under California's Medi-Cal transformation initiative",
-                  "Full continuum of support from housing navigation through deposit funding to tenancy sustainment",
-                  "Once-per-lifetime Housing Deposit Voucher up to $5,000 removes the biggest barrier to move-in",
-                  "Personal Healthcare Assistant model through Enhanced Care Management, a dedicated friend and advocate",
-                  "Cash assistance vouchers for qualifying low-income members based on MBSAC levels",
-                  "Partnered with major housing authorities (HACSB, HARIVCO) and federal agencies (HUD)",
-                  "600+ members successfully housed and $1.7M+ in vouchers funded since 2023",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 flex-shrink-0 w-5 h-5 bg-[#23779B] text-white rounded-full flex items-center justify-center text-xs font-bold">✓</span>
-                    <span className="text-gray-700 leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="space-y-5 text-gray-700 leading-relaxed">
+                <p>Most housing programs pass you through a waiting list and hand you a packet. CCC assigns you a person.</p>
+                <p>Your case manager handles the housing search, coordinates with local housing authorities, and manages the paperwork so you don&apos;t have to. If you qualify for the Housing Deposit Voucher, we&apos;ll cover your security deposit and first month&apos;s rent, up to $5,000. Monthly cash assistance is available for low-income members on top of that.</p>
+                <p>We&apos;ve deployed over $1.7 million in voucher funds and helped 600 members sign a lease since 2023. All through your existing Medi-Cal benefits, at no cost to you.</p>
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-[#23779B] text-white rounded-2xl p-6 text-center">
@@ -307,7 +296,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#1E2828] mb-3">Valued Partners</h2>
-            <p className="text-gray-600">Working alongside trusted organizations to bring housing stability to our members.</p>
+            <p className="text-gray-600">CCC coordinates with housing authorities and federal agencies that have real power to open doors for members.</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-8">
             {partners.map((p) => (
@@ -329,10 +318,10 @@ export default function HomePage() {
       <section className="py-16 bg-[#1E2828]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Ready to Get Started?
+            The Application Takes Five Minutes
           </h2>
           <p className="text-white/80 text-lg mb-8 leading-relaxed">
-            If you are a Medi-Cal member experiencing homelessness or housing instability, CCC is here to help. Apply online or call us today, our services are available at no cost to qualifying members.
+            A case manager does the rest. If you have Medi-Cal and are facing housing instability, there is a good chance you already qualify. It costs you nothing to find out.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -18,7 +18,7 @@ export default function ApplyNowPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Apply Now</h1>
           <p className="text-white/85 text-lg leading-relaxed max-w-2xl mx-auto">
-            Take the first step toward stable housing and quality care coordination. Fill out the form below and a CCC case manager will review your application and contact you shortly.
+            A CCC case manager will review your information and reach out within one to two business days. If your situation is urgent, call (888) 582-2282 directly.
           </p>
         </div>
       </section>
