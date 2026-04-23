@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service & Privacy Policy | California Care Coordinators",
+  title: "Terms of Service & Privacy Policy",
   description:
     "Read the Terms of Service and Privacy Policy for California Care Coordinators (CCC). Learn how we protect your personal information under HIPAA and CCPA.",
+  alternates: {
+    canonical: "/tos-privacy-policy",
+  },
 };
 
 export default function TosPrivacyPage() {

@@ -99,9 +99,59 @@ const faqs = [
   },
 ];
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "name": "California Care Coordinators",
+  "alternateName": "CCC",
+  "url": "https://joinccc.org",
+  "logo": "https://joinccc.org/logos/ccc-logo-blue-fullres.png",
+  "image": "https://joinccc.org/logos/ccc-logo-blue-fullres.png",
+  "telephone": "+18885822282",
+  "faxNumber": "+17142429802",
+  "email": "contact@joinccc.org",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "901 W. Civic Center Dr., Suite 200",
+    "addressLocality": "Santa Ana",
+    "addressRegion": "CA",
+    "postalCode": "92703",
+    "addressCountry": "US",
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Orange County, CA" },
+    { "@type": "AdministrativeArea", "name": "San Bernardino County, CA" },
+    { "@type": "AdministrativeArea", "name": "Riverside County, CA" },
+  ],
+  "description":
+    "California Care Coordinators is a Santa Ana-based Medi-Cal CalAIM provider delivering housing navigation, enhanced care management, and cash assistance vouchers to help qualifying members achieve and sustain stable housing.",
+  "foundingDate": "2023",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
+    },
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* ── Hero ── */}
       <section
         className="relative min-h-screen flex items-center"

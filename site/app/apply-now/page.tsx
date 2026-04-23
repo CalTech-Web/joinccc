@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import ApplicationForm from "@/components/ApplicationForm";
 
 export const metadata: Metadata = {
-  title: "Apply Now | California Care Coordinators",
+  title: "Apply Now",
   description:
     "Apply for CalAIM Community Supports services including housing navigation, Enhanced Care Management, and cash assistance vouchers. Qualifying Medi-Cal members can apply online.",
+  alternates: {
+    canonical: "/apply-now",
+  },
 };
 
 export default function ApplyNowPage() {
