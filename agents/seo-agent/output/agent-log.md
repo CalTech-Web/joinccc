@@ -43,3 +43,40 @@ All done. Here's a summary of what was shipped:
 
 Build confirmed clean. All routes static and generating correctly.
 [2026-04-22 20:12:03] Run #2 finished
+Run #2 complete. Here's what shipped:
+
+**`site/app/apply-now/page.tsx`**
+- Added `openGraph` and `twitter` card metadata (was completely missing)
+- Updated meta description to include "free", "Southern California", and "$5,000" for stronger keyword and conversion signals
+- Changed H1 from "The Application Takes Five Minutes" to "Apply for CalAIM Housing Support in Five Minutes" (keeps the five-minute hook while adding target keywords)
+- Added `BreadcrumbList` JSON-LD (Home > Apply Now), enabling breadcrumb trail in SERPs
+
+**`site/app/tos-privacy-policy/page.tsx`**
+- Added `openGraph` and `twitter` metadata
+- Added `BreadcrumbList` JSON-LD (Home > Terms of Service & Privacy Policy)
+
+**`site/app/page.tsx`**
+- Extended organization schema with `contactPoint` (telephone, contactType, areaServed) — improves voice search and knowledge panel eligibility
+- Added `hasOfferCatalog` listing all 5 active CalAIM services as structured `Service` offers — helps Google surface individual services in rich results
+
+Build passed cleanly. Both commits pushed to origin.
+[2026-04-22 20:16:14] Run #2 finished
+[2026-04-22 20:16:19] Run #3 starting (model: sonnet)
+[2026-04-22 20:16:19] Run #3 complete
+[2026-04-22 20:16:19] Changes:
+[2026-04-22 20:16:19]   ~ site/app/page.tsx — added HowTo schema (5-step process), WebSite schema, potentialAction (ApplyAction) on Organization, city-level areaServed (Santa Ana, Anaheim, Irvine, Riverside, San Bernardino, Ontario)
+[2026-04-22 20:16:19]   ~ site/app/layout.tsx — added OG image dimensions (1200x630), geo meta tags (geo.region, geo.placename, geo.position, ICBM) for local SEO signals
+Run #3 complete. Here's what shipped:
+
+**`site/app/page.tsx`**
+- Added `HowTo` schema for the 5-step application process — enables HowTo rich results in SERPs; includes `totalTime: PT5M`, `estimatedCost: $0`, supply items (Medi-Cal + IEHP ID), and all 5 steps with position and text
+- Added `WebSite` schema — establishes the site entity in Google's knowledge graph; includes name, alternateName, url, description, and publisher
+- Added `potentialAction` (ApplyAction) to the Organization schema — surfaces "Apply" as a structured action on the organization entity
+- Expanded `areaServed` from 3 county-level entries to 9 entries (3 counties + 6 key cities: Santa Ana, Anaheim, Irvine, Riverside, San Bernardino, Ontario) for city-specific local ranking
+
+**`site/app/layout.tsx`**
+- Added `width: 1200` and `height: 630` to the default OG image — prevents missing-dimension warnings in social crawlers and ensures proper card rendering
+- Added `other` meta tags: `geo.region: US-CA`, `geo.placename: Santa Ana, California`, `geo.position: 33.7455;-117.8677`, `ICBM: 33.7455, -117.8677` — old-school local SEO signals used by some directory crawlers and local search engines
+
+Build confirmed clean. Commit pushed to origin.
+[2026-04-22 20:16:19] Run #3 finished
