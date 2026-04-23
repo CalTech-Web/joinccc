@@ -24,7 +24,7 @@ const initialState: FormState = {
   email: "",
   address: "",
   city: "",
-  state: "CA",
+  state: "",
   zip: "",
   iehpId: "",
   housingStatus: "",
@@ -112,8 +112,8 @@ export default function ApplicationForm() {
             <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} placeholder="(888) 000-0000" className={inputClass} />
           </div>
           <div>
-            <label htmlFor="email" className={labelClass}>Email Address</label>
-            <input id="email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="your@email.com" className={inputClass} />
+            <label htmlFor="email" className={labelClass}>Email Address *</label>
+            <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="your@email.com" className={inputClass} />
           </div>
         </div>
       </div>
@@ -133,11 +133,11 @@ export default function ApplicationForm() {
             </div>
             <div>
               <label htmlFor="state" className={labelClass}>State *</label>
-              <input id="state" name="state" type="text" required value={form.state} onChange={handleChange} placeholder="CA" className={inputClass} />
+              <input id="state" name="state" type="text" required value={form.state} onChange={handleChange} placeholder="State" className={inputClass} />
             </div>
             <div>
               <label htmlFor="zip" className={labelClass}>ZIP Code *</label>
-              <input id="zip" name="zip" type="text" required value={form.zip} onChange={handleChange} placeholder="92703" className={inputClass} />
+              <input id="zip" name="zip" type="text" required value={form.zip} onChange={handleChange} placeholder="ZIP Code" className={inputClass} />
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function ApplicationForm() {
       </div>
 
       {/* HIPAA Notice */}
-      <p className="text-xs text-gray-400 leading-relaxed">
+      <p className="text-xs text-gray-600 leading-relaxed">
         Your information is protected under HIPAA and the California Consumer Privacy Act (CCPA). CCC will never share your personal information without your consent. By submitting this form, you consent to be contacted by a CCC representative regarding your application.
       </p>
 

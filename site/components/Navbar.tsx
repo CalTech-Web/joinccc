@@ -32,7 +32,7 @@ export default function Navbar() {
               Apply Now
             </Link>
             <Link href="/tos-privacy-policy" className="text-[#1E2828] hover:text-[#23779B] font-medium transition-colors">
-              TOS &amp; Privacy
+              Privacy Policy
             </Link>
             <a
               href="tel:8885822282"
@@ -69,7 +69,7 @@ export default function Navbar() {
                 Apply Now
               </Link>
               <Link href="/tos-privacy-policy" className="text-[#1E2828] hover:text-[#23779B] font-medium py-2" onClick={() => setMobileOpen(false)}>
-                TOS &amp; Privacy
+                Privacy Policy
               </Link>
               <a
                 href="tel:8885822282"

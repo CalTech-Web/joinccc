@@ -351,7 +351,7 @@ export default function HomePage() {
       />
       {/* ── Hero ── */}
       <section
-        className="relative min-h-screen flex items-center"
+        className="relative min-h-[600px] flex items-center"
         style={{ background: "linear-gradient(135deg, #23779B 0%, #1a5a75 60%, #1E2828 100%)" }}
       >
         <div className="absolute inset-0 bg-black/30" />
@@ -388,7 +388,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Callback Form */}
-            <div className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+            <div className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto mt-8 lg:mt-0 border-t border-white/20 pt-8 lg:border-0 lg:pt-0">
               <CallbackForm />
             </div>
           </div>
@@ -412,7 +412,7 @@ export default function HomePage() {
                   alt={m.alt}
                   width={120}
                   height={120}
-                  className="w-24 h-24 object-contain mb-4"
+                  className="hidden sm:block w-24 h-24 object-contain mb-4"
                 />
                 <div className="text-3xl font-bold text-[#23779B] mb-1">{m.value}</div>
                 <div className="text-sm text-gray-600 font-medium">{m.label}</div>
@@ -443,10 +443,10 @@ export default function HomePage() {
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-[#23779B] px-4 py-2">
-                    <h3 className="text-white font-bold text-base">
-                      {svc.title}
+                    <h3 className="text-white font-bold text-base flex items-center flex-wrap gap-2">
+                      <span>{svc.title}</span>
                       {svc.comingSoon && (
-                        <span className="ml-2 bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
+                        <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
                           Coming Soon
                         </span>
                       )}
@@ -471,9 +471,12 @@ export default function HomePage() {
               Five steps from application to a signed lease. Most applicants hear back within one to two business days.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {steps.map((s) => (
-              <div key={s.step} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {steps.map((s, i) => (
+              <div
+                key={s.step}
+                className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center${i === 4 ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : ""}`}
+              >
                 <div className="w-12 h-12 bg-white text-[#23779B] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {s.step}
                 </div>

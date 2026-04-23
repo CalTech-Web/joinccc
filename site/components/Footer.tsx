@@ -26,7 +26,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300 text-sm">
               <li><Link href="/" className="hover:text-[#23779B] transition-colors">Home</Link></li>
               <li><Link href="/apply-now" className="hover:text-[#23779B] transition-colors">Apply Now</Link></li>
-              <li><Link href="/tos-privacy-policy" className="hover:text-[#23779B] transition-colors">TOS &amp; Privacy Policy</Link></li>
+              <li><Link href="/tos-privacy-policy" className="hover:text-[#23779B] transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-xs">
-          <p>© 2023 CA Care Coordinators LTD. All Rights Reserved.</p>
+          <p>© 2026 CA Care Coordinators LTD. All Rights Reserved.</p>
           <p>
             Powered by{" "}
             <a href="https://caltechweb.com" className="hover:text-[#23779B] transition-colors underline" target="_blank" rel="noopener noreferrer">

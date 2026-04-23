@@ -56,7 +56,7 @@ export default function TosPrivacyPage() {
         style={{ background: "linear-gradient(135deg, #23779B 0%, #1E2828 100%)" }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h1 className="text-2xl sm:text-4xl font-bold text-white mb-4">
             Terms of Service &amp; Privacy Policy
           </h1>
           <p className="text-white/80 text-lg">
@@ -68,38 +68,70 @@ export default function TosPrivacyPage() {
       {/* Content */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none text-[#1E2828]">
+
+          {/* Table of Contents */}
+          <nav aria-label="Page sections" className="mb-12 bg-[#F4F8FC] rounded-2xl p-6">
+            <h2 className="text-lg font-bold text-[#1E2828] mb-4">Table of Contents</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+              <div>
+                <p className="font-semibold text-[#23779B] mb-2">Terms of Service</p>
+                <ol className="space-y-1 text-gray-600">
+                  <li><a href="#tos-1" className="hover:text-[#23779B] hover:underline transition-colors">1. Acceptance of Terms</a></li>
+                  <li><a href="#tos-2" className="hover:text-[#23779B] hover:underline transition-colors">2. Services</a></li>
+                  <li><a href="#tos-3" className="hover:text-[#23779B] hover:underline transition-colors">3. Eligibility</a></li>
+                  <li><a href="#tos-4" className="hover:text-[#23779B] hover:underline transition-colors">4. Housing Deposit Voucher Terms</a></li>
+                  <li><a href="#tos-5" className="hover:text-[#23779B] hover:underline transition-colors">5. Disclaimer</a></li>
+                  <li><a href="#tos-6" className="hover:text-[#23779B] hover:underline transition-colors">6. Limitation of Liability</a></li>
+                </ol>
+              </div>
+              <div>
+                <p className="font-semibold text-[#23779B] mb-2">Privacy Policy</p>
+                <ol className="space-y-1 text-gray-600">
+                  <li><a href="#pp-1" className="hover:text-[#23779B] hover:underline transition-colors">1. Information We Collect</a></li>
+                  <li><a href="#pp-2" className="hover:text-[#23779B] hover:underline transition-colors">2. HIPAA Compliance</a></li>
+                  <li><a href="#pp-3" className="hover:text-[#23779B] hover:underline transition-colors">3. California Consumer Privacy Act (CCPA)</a></li>
+                  <li><a href="#pp-4" className="hover:text-[#23779B] hover:underline transition-colors">4. How We Use Your Information</a></li>
+                  <li><a href="#pp-5" className="hover:text-[#23779B] hover:underline transition-colors">5. Information Sharing</a></li>
+                  <li><a href="#pp-6" className="hover:text-[#23779B] hover:underline transition-colors">6. Data Security</a></li>
+                  <li><a href="#pp-7" className="hover:text-[#23779B] hover:underline transition-colors">7. reCAPTCHA</a></li>
+                  <li><a href="#pp-8" className="hover:text-[#23779B] hover:underline transition-colors">8. Contact Us</a></li>
+                </ol>
+              </div>
+            </div>
+          </nav>
+
+          <div className="prose prose-lg text-[#1E2828]">
 
             {/* Terms of Service */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-[#1E2828] mb-6 pb-3 border-b border-gray-200">Terms of Service</h2>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">1. Acceptance of Terms</h3>
+              <h3 id="tos-1" className="text-xl font-bold text-[#23779B] mt-8 mb-3">1. Acceptance of Terms</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 By accessing or using the California Care Coordinators (CCC) website at joinccc.org, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">2. Services</h3>
+              <h3 id="tos-2" className="text-xl font-bold text-[#23779B] mt-8 mb-3">2. Services</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 CCC provides CalAIM Community Supports services including Housing Navigation, Housing Deposit Vouchers, Tenancy Sustaining, Cash Assistance Vouchers, and Enhanced Care Management to qualifying Medi-Cal recipients. Services are subject to eligibility requirements established under California's CalAIM initiative. CCC reserves the right to modify, suspend, or discontinue any service at any time.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">3. Eligibility</h3>
+              <h3 id="tos-3" className="text-xl font-bold text-[#23779B] mt-8 mb-3">3. Eligibility</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Services are available to qualifying Medi-Cal recipients who meet CalAIM Community Supports eligibility criteria. CCC does not guarantee services to any individual. Eligibility determinations are made at the sole discretion of CCC in accordance with CalAIM program guidelines.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">4. Housing Deposit Voucher Terms</h3>
+              <h3 id="tos-4" className="text-xl font-bold text-[#23779B] mt-8 mb-3">4. Housing Deposit Voucher Terms</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 The Housing Deposit Voucher is a once-per-member-per-lifetime benefit. It covers qualifying move-in costs including security deposit and first month's rent up to $5,000. Specific terms and conditions apply. Contact CCC for full voucher terms and eligibility requirements.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">5. Disclaimer</h3>
+              <h3 id="tos-5" className="text-xl font-bold text-[#23779B] mt-8 mb-3">5. Disclaimer</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 The information on this website is provided for general informational purposes only. CCC makes no warranties, expressed or implied, regarding the accuracy, adequacy, completeness, legality, reliability, or usefulness of any information on this site. All information is provided on an "as is" basis.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">6. Limitation of Liability</h3>
+              <h3 id="tos-6" className="text-xl font-bold text-[#23779B] mt-8 mb-3">6. Limitation of Liability</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 CA Care Coordinators LTD shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of, or inability to use, this website or its services.
               </p>
@@ -109,42 +141,42 @@ export default function TosPrivacyPage() {
             <div>
               <h2 className="text-3xl font-bold text-[#1E2828] mb-6 pb-3 border-b border-gray-200">Privacy Policy</h2>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">1. Information We Collect</h3>
+              <h3 id="pp-1" className="text-xl font-bold text-[#23779B] mt-8 mb-3">1. Information We Collect</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 CCC collects information you provide directly, including your name, phone number, email address, mailing address, IEHP ID number, housing status, and health condition information when you submit an application or contact form. We may also collect technical information such as IP address, browser type, and pages visited.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">2. HIPAA Compliance</h3>
+              <h3 id="pp-2" className="text-xl font-bold text-[#23779B] mt-8 mb-3">2. HIPAA Compliance</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 CCC is committed to complying with the Health Insurance Portability and Accountability Act (HIPAA). Protected Health Information (PHI) collected in connection with our services is handled in accordance with HIPAA Privacy Rule requirements. We maintain appropriate administrative, physical, and technical safeguards to protect your health information.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">3. California Consumer Privacy Act (CCPA)</h3>
+              <h3 id="pp-3" className="text-xl font-bold text-[#23779B] mt-8 mb-3">3. California Consumer Privacy Act (CCPA)</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                California residents have the right to know what personal information CCC collects, to request deletion of their personal information, and to opt out of the sale of their personal information. CCC does not sell personal information. To exercise your CCPA rights, contact us at contact@joinccc.org.
+                California residents have the right to know what personal information CCC collects, to request deletion of their personal information, and to opt out of the sale of their personal information. CCC does not sell personal information. To exercise your CCPA rights, contact us at apply@joinccc.org.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">4. How We Use Your Information</h3>
+              <h3 id="pp-4" className="text-xl font-bold text-[#23779B] mt-8 mb-3">4. How We Use Your Information</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 We use your information to process and evaluate your application for CalAIM Community Supports services, to contact you regarding your application, to coordinate care and housing services, to comply with legal and regulatory requirements, and to improve our services.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">5. Information Sharing</h3>
+              <h3 id="pp-5" className="text-xl font-bold text-[#23779B] mt-8 mb-3">5. Information Sharing</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 CCC may share your information with managed care partners (including IEHP and CalOptima), housing authorities (including HACSB and HARIVCO), and other service providers as necessary to deliver CalAIM Community Supports services. We will not share your information for marketing purposes or sell it to third parties. All sharing is conducted in compliance with HIPAA and applicable state law.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">6. Data Security</h3>
+              <h3 id="pp-6" className="text-xl font-bold text-[#23779B] mt-8 mb-3">6. Data Security</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 CCC implements industry-standard security measures to protect your personal and health information. However, no method of transmission over the Internet is 100% secure. We encourage you to contact us directly at (888) 582-2282 if you have concerns about sharing sensitive information online.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">7. reCAPTCHA</h3>
+              <h3 id="pp-7" className="text-xl font-bold text-[#23779B] mt-8 mb-3">7. reCAPTCHA</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 This site may use Google reCAPTCHA to protect against spam and abuse. Use of reCAPTCHA is subject to the Google Privacy Policy and Terms of Service.
               </p>
 
-              <h3 className="text-xl font-bold text-[#23779B] mt-8 mb-3">8. Contact Us</h3>
+              <h3 id="pp-8" className="text-xl font-bold text-[#23779B] mt-8 mb-3">8. Contact Us</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 If you have questions about these Terms or our Privacy Policy, contact us:
               </p>
@@ -160,8 +192,8 @@ export default function TosPrivacyPage() {
                 </p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:contact@joinccc.org" className="text-[#23779B] hover:underline">
-                    contact@joinccc.org
+                  <a href="mailto:apply@joinccc.org" className="text-[#23779B] hover:underline">
+                    apply@joinccc.org
                   </a>
                 </p>
               </address>
