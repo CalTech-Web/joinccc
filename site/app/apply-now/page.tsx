@@ -16,7 +16,7 @@ export default function ApplyNowPage() {
         style={{ background: "linear-gradient(135deg, #23779B 0%, #1E2828 100%)" }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Apply Now</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">The Application Takes Five Minutes</h1>
           <p className="text-white/85 text-lg leading-relaxed max-w-2xl mx-auto">
             A CCC case manager will review your information and reach out within one to two business days. If your situation is urgent, call (888) 582-2282 directly.
           </p>
@@ -27,7 +27,7 @@ export default function ApplyNowPage() {
       <section className="py-16 bg-[#F4F8FC]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-sm p-8 sm:p-10">
-            <h2 className="text-2xl font-bold text-[#1E2828] mb-2">Membership Application</h2>
+            <h2 className="text-2xl font-bold text-[#1E2828] mb-2">Your Application</h2>
             <p className="text-gray-500 text-sm mb-8">
               Fields marked with * are required. Your information is protected under HIPAA and CCPA.
             </p>

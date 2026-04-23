@@ -116,7 +116,7 @@ export default function HomePage() {
                 CalAIM Community Supports Provider
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Housing Support &amp; Care Coordination for Medi-Cal Members
+                Free Housing Support, a Personal Case Manager, and Move-In Funds. All Through Medi-Cal.
               </h1>
               <p className="text-white/85 text-lg leading-relaxed mb-8">
                 You may already qualify for a personal case manager, up to $5,000 in move-in costs, and monthly cash assistance, all through your existing Medi-Cal benefits. California Care Coordinators connects eligible members to these CalAIM housing supports at no cost.
@@ -284,7 +284,7 @@ export default function HomePage() {
       <section className="py-16 bg-[#F4F8FC]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Frequently Asked Questions</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Common Questions</h2>
             <p className="text-gray-600">Questions most people ask before they apply, answered plainly.</p>
           </div>
           <FAQAccordion faqs={faqs} />
