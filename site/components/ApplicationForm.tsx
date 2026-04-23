@@ -202,7 +202,7 @@ export default function ApplicationForm() {
         disabled={status === "sending"}
         className="w-full bg-[#23779B] text-white font-bold py-4 rounded-full text-lg hover:bg-[#1a5a75] transition-colors disabled:opacity-60 shadow-md"
       >
-        {status === "sending" ? "Submitting..." : "Submit Application"}
+        {status === "sending" ? "Submitting..." : "Submit My Free Application"}
       </button>
     </form>
   );

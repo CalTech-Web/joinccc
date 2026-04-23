@@ -85,13 +85,12 @@ export default function CallbackForm() {
         </div>
         <div>
           <label htmlFor="callback-email" className="block text-[#1E2828] text-sm mb-1 font-semibold">
-            Email Address
+            Email Address <span className="text-gray-400 font-normal">(optional)</span>
           </label>
           <input
             id="callback-email"
             name="email"
             type="email"
-            required
             value={form.email}
             onChange={handleChange}
             placeholder="your@email.com"

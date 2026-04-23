@@ -409,6 +409,7 @@ export default function HomePage() {
                   Start My Free Application
                 </Link>
               </div>
+              <p className="mt-4 text-white/55 text-xs tracking-wide">HIPAA Protected &nbsp;·&nbsp; No Cost to You &nbsp;·&nbsp; Response in 1–2 Business Days</p>
             </div>
 
             {/* Right: Callback Form */}
@@ -435,6 +436,14 @@ export default function HomePage() {
                 <div className="text-sm text-gray-500 font-medium">{m.label}</div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <a
+              href="#callback-form"
+              className="inline-block bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+            >
+              See If I Qualify — It&apos;s Free
+            </a>
           </div>
         </div>
       </section>
@@ -649,6 +658,24 @@ export default function HomePage() {
             <p className="text-gray-600">Questions most people ask before they apply, answered plainly.</p>
           </div>
           <FAQAccordion faqs={faqs} />
+          <div className="mt-12 border-t border-gray-200 pt-10 text-center">
+            <p className="text-[#1E2828] font-bold text-lg mb-2">Still have questions? Talk to someone.</p>
+            <p className="text-gray-500 text-sm mb-6">A CCC team member can walk you through your options before you apply.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="#callback-form"
+                className="bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+              >
+                Request a Callback
+              </a>
+              <Link
+                href="/apply-now"
+                className="border-2 border-[#23779B] text-[#23779B] font-bold px-8 py-3.5 rounded-full hover:bg-[#23779B]/5 transition-colors"
+              >
+                Apply Online Now
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
