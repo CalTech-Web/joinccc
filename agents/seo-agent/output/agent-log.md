@@ -80,3 +80,41 @@ Run #3 complete. Here's what shipped:
 
 Build confirmed clean. Commit pushed to origin.
 [2026-04-22 20:16:19] Run #3 finished
+Run #3 complete. Here's what shipped:
+
+**`site/app/page.tsx`**
+- `HowTo` schema for the 5-step application process, with `totalTime: PT5M`, `estimatedCost: $0`, supply items, and all 5 steps — eligible for HowTo rich results in Google
+- `WebSite` schema to establish the site entity in Google's knowledge graph
+- `potentialAction` (ApplyAction) on the Organization schema pointing to `/apply-now`
+- `areaServed` expanded from 3 counties to 9 entries, adding Santa Ana, Anaheim, Irvine, Riverside, San Bernardino, and Ontario for city-level local ranking signals
+
+**`site/app/layout.tsx`**
+- OG image now includes `width: 1200, height: 630` — fixes social card rendering in crawlers that require explicit dimensions
+- `geo.region`, `geo.placename`, `geo.position`, and `ICBM` meta tags added for local SEO signals
+
+Build clean, committed, pushed to origin.
+[2026-04-22 20:19:54] Run #3 finished
+[2026-04-22 20:19:59] Run #4 starting (model: sonnet)
+[2026-04-22 20:19:59] Run #4 complete
+[2026-04-22 20:19:59] Changes:
+[2026-04-22 20:19:59]   ~ site/app/page.tsx — added missing "What is Enhanced Care Management?" FAQ (was in SITE_FACTS but absent from page); added SocialService to Organization @type array; added 5 more cities to areaServed (Garden Grove, Fullerton, Orange, Corona, Fontana)
+[2026-04-22 20:19:59]   ~ site/app/apply-now/page.tsx — added WebPage schema with breadcrumb, speakable CSS selectors, isPartOf WebSite, and potentialAction (ApplyAction) to signal conversion intent to Google
+[2026-04-22 20:19:59]   ~ site/app/tos-privacy-policy/page.tsx — added robots: { index: false, follow: true } to prevent Google from wasting crawl budget on the legal page
+[2026-04-22 20:19:59]   ~ site/app/layout.tsx — expanded keywords with 10 additional long-tail terms (CalAIM housing support, free housing assistance Medi-Cal, homeless services Orange County, etc.)
+Run #4 complete. Here's what shipped:
+
+**`site/app/page.tsx`**
+- Added missing FAQ: "What is Enhanced Care Management?" (7th FAQ from SITE_FACTS.md that was not on the page; now included in both the visible accordion and the FAQPage JSON-LD schema)
+- Added `SocialService` to the `@type` array (`["Organization", "LocalBusiness", "SocialService"]`) for more precise schema classification matching the nature of the business
+- Added 5 more cities to `areaServed`: Garden Grove, Fullerton, Orange, Corona, Fontana — now 14 total entries (3 counties + 11 cities)
+
+**`site/app/apply-now/page.tsx`**
+- Added `WebPage` JSON-LD schema marking the page as a structured web entity with `breadcrumb`, `speakable` (targeting h1/h2 for voice search), `isPartOf` WebSite, and a `potentialAction` (ApplyAction) to signal conversion intent in structured data
+
+**`site/app/tos-privacy-policy/page.tsx`**
+- Added `robots: { index: false, follow: true }` metadata so Google does not index the legal page, preserving crawl budget for the homepage and apply-now page
+
+**`site/app/layout.tsx`**
+- Expanded keywords list with 10 additional long-tail and geo-targeted terms: "CalAIM housing support Southern California", "free housing assistance Medi-Cal", "homeless services Orange County", "CalAIM provider Orange County", "Medi-Cal housing assistance", "housing deposit voucher California", "move-in funds Medi-Cal", "housing instability support", "case manager Medi-Cal", "CalAIM community supports provider"
+
+Build confirmed clean. Committed and pushed to origin.
