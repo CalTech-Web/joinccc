@@ -387,10 +387,10 @@ export default function HomePage() {
                 CalAIM Community Supports Provider
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Free Housing, a Case Manager, and Move-In Funds. Through Medi-Cal.
+                Free Housing, a Case Manager, and Move-In Funds Through Your Medi-Cal.
               </h1>
               <p className="text-white/85 text-lg leading-relaxed mb-8">
-                Qualifying Medi-Cal members get a personal case manager, up to $5,000 in move-in costs, and monthly cash assistance at no cost.
+                For Medi-Cal members facing homelessness or housing instability. A dedicated case manager is assigned to you, every service is free, and the application takes five minutes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -406,7 +406,7 @@ export default function HomePage() {
                   href="/apply-now"
                   className="flex items-center justify-center bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-colors"
                 >
-                  Apply Now
+                  Start My Free Application
                 </Link>
               </div>
             </div>
@@ -482,9 +482,9 @@ export default function HomePage() {
       <section className="py-16" style={{ background: "linear-gradient(135deg, #23779B 0%, #1a5a75 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">How It Works</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Five Steps to a Signed Lease</h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              Five steps from application to a signed lease. Most applicants hear back within one to two business days.
+              From application to housed. Most applicants hear back within one to two business days.
             </p>
           </div>
 
@@ -656,7 +656,7 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-[#1E2828] mb-3">Valued Partners</h2>
+            <h2 className="text-3xl font-bold text-[#1E2828] mb-3">Trusted by HUD, CalAIM, and Regional Housing Authorities</h2>
             <p className="text-gray-600">The vouchers, the funding, and the regional relationships that get members housed run through these organizations.</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-8">
@@ -689,7 +689,7 @@ export default function HomePage() {
               href="/apply-now"
               className="bg-[#23779B] text-white font-bold px-10 py-4 rounded-full text-lg hover:bg-[#1a5a75] transition-colors shadow-lg"
             >
-              Apply Now
+              Apply Free in 5 Minutes
             </Link>
             <a
               href="tel:8885822282"
