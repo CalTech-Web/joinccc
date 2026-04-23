@@ -477,6 +477,14 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/apply-now"
+              className="inline-block bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+            >
+              Apply for Free — See What You Qualify For
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -39,9 +39,13 @@ export default function CallbackForm() {
   if (status === "sent") {
     return (
       <div className="bg-white rounded-2xl shadow-2xl p-8 text-center">
-        <div className="text-5xl mb-4">✓</div>
-        <h3 className="text-[#1E2828] font-bold text-xl mb-2">We will call you soon!</h3>
-        <p className="text-gray-500 text-sm">A care coordinator will reach out to you shortly.</p>
+        <div className="w-16 h-16 bg-[#23779B] rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="text-[#1E2828] font-bold text-xl mb-2">Request received.</h3>
+        <p className="text-gray-500 text-sm leading-relaxed">A CCC care coordinator will call you within one to two business days. For urgent help, call <a href="tel:8885822282" className="text-[#23779B] font-semibold hover:underline">(888) 582-2282</a>.</p>
       </div>
     );
   }
