@@ -40,11 +40,7 @@ export default function ApplyNowPage() {
             <ul className="text-gray-600 text-sm space-y-2 leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="text-[#23779B] font-bold mt-0.5">•</span>
-                Medi-Cal recipients experiencing homelessness or at risk of homelessness
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#23779B] font-bold mt-0.5">•</span>
-                Individuals recently institutionalized
+                Medi-Cal members homeless, at risk, or recently institutionalized
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#23779B] font-bold mt-0.5">•</span>
@@ -52,7 +48,7 @@ export default function ApplyNowPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#23779B] font-bold mt-0.5">•</span>
-                Low-income households eligible for cash assistance based on MBSAC levels
+                Low-income households eligible for cash assistance
               </li>
             </ul>
             <p className="text-gray-500 text-xs mt-4">

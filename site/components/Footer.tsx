@@ -16,7 +16,7 @@ export default function Footer() {
               className="h-12 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
-              Providing qualifying Medi-Cal recipients with Enhanced Care Management and Community Supports in accordance with CalAIM.
+              Housing navigation, deposit vouchers, and care coordination for Medi-Cal members in Southern California.
             </p>
           </div>
 
