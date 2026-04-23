@@ -28,11 +28,11 @@ export default function Navbar() {
             <Link href="/" className="text-[#1E2828] hover:text-[#23779B] font-medium transition-colors">
               Home
             </Link>
-            <Link href="/apply-now" className="border-2 border-[#23779B] text-[#23779B] px-5 py-2 rounded-full font-semibold hover:bg-[#23779B] hover:text-white transition-colors">
-              Apply Now
-            </Link>
             <Link href="/tos-privacy-policy" className="text-[#1E2828] hover:text-[#23779B] font-medium transition-colors">
               Privacy Policy
+            </Link>
+            <Link href="/apply-now" className="border-2 border-[#23779B] text-[#23779B] px-5 py-2 rounded-full font-semibold hover:bg-[#23779B] hover:text-white transition-colors">
+              Apply Now
             </Link>
             <a
               href="tel:8885822282"
@@ -65,11 +65,11 @@ export default function Navbar() {
               <Link href="/" className="text-[#1E2828] hover:text-[#23779B] font-medium py-2" onClick={() => setMobileOpen(false)}>
                 Home
               </Link>
-              <Link href="/apply-now" className="border-2 border-[#23779B] text-[#23779B] px-5 py-3 rounded-full font-semibold text-center hover:bg-[#23779B] hover:text-white transition-colors" onClick={() => setMobileOpen(false)}>
-                Apply Now
-              </Link>
               <Link href="/tos-privacy-policy" className="text-[#1E2828] hover:text-[#23779B] font-medium py-2" onClick={() => setMobileOpen(false)}>
                 Privacy Policy
+              </Link>
+              <Link href="/apply-now" className="border-2 border-[#23779B] text-[#23779B] px-5 py-3 rounded-full font-semibold text-center hover:bg-[#23779B] hover:text-white transition-colors" onClick={() => setMobileOpen(false)}>
+                Apply Now
               </Link>
               <a
                 href="tel:8885822282"

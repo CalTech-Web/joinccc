@@ -89,11 +89,11 @@ const partners = [
 ];
 
 const steps = [
-  { step: "1", title: "Apply", description: "Fill out the online application in about five minutes. You'll need your name, contact info, IEHP ID, and a brief description of your current housing situation." },
-  { step: "2", title: "Eligibility Review", description: "CCC reviews your application to confirm you qualify. Most applicants hear back within one to two business days." },
-  { step: "3", title: "Case Manager Assignment", description: "If you qualify, a dedicated case manager is assigned to you. They become your single point of contact for housing, healthcare, and every enrolled service." },
-  { step: "4", title: "Housing Navigation", description: "Your case manager works the housing search and handles coordination with landlords and housing authorities until you have an approved lease." },
-  { step: "5", title: "Sustained Support", description: "Once you're housed, support continues for up to 12 more months. Tenancy Sustaining keeps you connected to your case manager so your housing stays stable." },
+  { step: "1", title: "Apply", description: "Fill out a short form online. Takes about five minutes." },
+  { step: "2", title: "We Review", description: "We check your application. Most people hear back in one to two days." },
+  { step: "3", title: "Get a Case Manager", description: "If you qualify, we assign someone to help you every step of the way." },
+  { step: "4", title: "Find Housing", description: "Your case manager handles the search and talks to landlords for you." },
+  { step: "5", title: "Stay Stable", description: "After you move in, we stay with you for up to 12 more months." },
 ];
 
 const faqs = [
@@ -442,7 +442,7 @@ export default function HomePage() {
               href="#callback-form"
               className="inline-block bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
             >
-              See If I Qualify — It&apos;s Free
+              See If I Qualify, It&apos;s Free
             </a>
           </div>
         </div>
@@ -482,7 +482,7 @@ export default function HomePage() {
               href="/apply-now"
               className="inline-block bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
             >
-              Apply for Free — See What You Qualify For
+              Apply for Free, See What You Qualify For
             </Link>
           </div>
         </div>
@@ -559,7 +559,7 @@ export default function HomePage() {
               href="#callback-form"
               className="inline-block bg-white text-[#23779B] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Check If I Qualify — It&apos;s Free
+              Check If I Qualify, It&apos;s Free
             </a>
           </div>
         </div>
