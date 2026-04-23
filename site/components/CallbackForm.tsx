@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function CallbackForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,12 +19,15 @@ export default function CallbackForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           site: "joinccc.org",
-          ...form,
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
         }),
       });
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", phone: "", message: "" });
+        setForm({ name: "", phone: "", email: "", message: "" });
       } else {
         setStatus("error");
       }
@@ -76,6 +79,21 @@ export default function CallbackForm() {
           value={form.phone}
           onChange={handleChange}
           placeholder="(888) 000-0000"
+          className="w-full px-4 py-3 rounded-lg bg-white/90 text-[#1E2828] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-sm"
+        />
+      </div>
+      <div>
+        <label htmlFor="callback-email" className="block text-white/80 text-sm mb-1 font-medium">
+          Email Address
+        </label>
+        <input
+          id="callback-email"
+          name="email"
+          type="email"
+          required
+          value={form.email}
+          onChange={handleChange}
+          placeholder="your@email.com"
           className="w-full px-4 py-3 rounded-lg bg-white/90 text-[#1E2828] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-sm"
         />
       </div>
