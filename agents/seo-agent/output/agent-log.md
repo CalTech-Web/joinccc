@@ -118,3 +118,48 @@ Run #4 complete. Here's what shipped:
 - Expanded keywords list with 10 additional long-tail and geo-targeted terms: "CalAIM housing support Southern California", "free housing assistance Medi-Cal", "homeless services Orange County", "CalAIM provider Orange County", "Medi-Cal housing assistance", "housing deposit voucher California", "move-in funds Medi-Cal", "housing instability support", "case manager Medi-Cal", "CalAIM community supports provider"
 
 Build confirmed clean. Committed and pushed to origin.
+Run #4 complete. Here's what shipped:
+
+**`site/app/page.tsx`**
+- Added the missing "What is Enhanced Care Management?" FAQ (present in SITE_FACTS.md but absent from the page), now included in both the visible accordion and the FAQPage JSON-LD schema — 7 FAQs total
+- Added `SocialService` to the Organization `@type` array for more precise schema classification
+- Expanded `areaServed` with 5 more cities: Garden Grove, Fullerton, Orange, Corona, Fontana (now 14 total entries)
+
+**`site/app/apply-now/page.tsx`**
+- Added `WebPage` JSON-LD schema with `breadcrumb`, `speakable` CSS selectors (h1/h2 for voice search eligibility), `isPartOf` WebSite, and an `ApplyAction` potentialAction to signal conversion intent
+
+**`site/app/tos-privacy-policy/page.tsx`**
+- Added `robots: { index: false, follow: true }` to stop Google from indexing the legal page, preserving crawl budget for the revenue-driving pages
+
+**`site/app/layout.tsx`**
+- Expanded keywords with 10 additional long-tail terms targeting specific CalAIM and Southern California homeless services queries
+
+Build clean, committed, pushed.
+[2026-04-22 20:22:46] Run #4 finished
+[2026-04-22 20:22:51] Run #5 starting (model: sonnet)
+[2026-04-22 20:22:51] Run #5 complete
+[2026-04-22 20:22:51] Changes:
+[2026-04-22 20:22:51]   ~ site/app/page.tsx — added @id to Organization schema (#organization) and WebSite schema (#website); linked publisher via @id; added ItemList schema for all 6 services; improved all service and partner image alt text with keyword-rich descriptions
+[2026-04-22 20:22:51]   ~ site/app/apply-now/page.tsx — added @id (#webpage), publisher (@id reference), datePublished (2023-01-01), dateModified (2026-04-22), about (Service), and updated isPartOf/provider to reference @id anchors for proper cross-schema entity linking
+[2026-04-22 20:22:51]   ~ site/components/Navbar.tsx — added aria-label="Primary navigation" to desktop nav element
+Run #5 complete. Here's what shipped:
+
+**`site/app/page.tsx`**
+- Added `"@id": "https://joinccc.org/#organization"` to Organization schema — establishes a stable entity anchor Google can reference across all pages
+- Added `"@id": "https://joinccc.org/#website"` to WebSite schema and linked `publisher` via `@id` reference — properly cross-links the two entities in the knowledge graph
+- Added new `ItemList` schema for all 6 CalAIM services with position, name, and description per item — surfaces the service list as a structured entity, eligible for list rich results
+- Improved all 6 service image alt texts from single-word names to full keyword-rich descriptions (e.g., "CalAIM housing navigation case management for Medi-Cal members experiencing homelessness in Southern California")
+- Improved all 5 partner image alt texts from acronyms to full organization names (e.g., "HACSB - Housing Authority of the County of San Bernardino")
+
+**`site/app/apply-now/page.tsx`**
+- Added `"@id": "https://joinccc.org/apply-now#webpage"` to WebPage schema
+- Added `publisher` referencing the organization `@id` anchor
+- Added `datePublished: "2023-01-01"` and `dateModified: "2026-04-22"` — freshness signals for Google
+- Added `about` property (CalAIM Community Supports service with organization `@id`) to describe page topic in structured data
+- Updated all internal `@id` references (`isPartOf`, `provider`) to use `#website` and `#organization` anchors instead of plain URLs
+
+**`site/components/Navbar.tsx`**
+- Added `aria-label="Primary navigation"` to desktop `<nav>` — accessibility improvement that also benefits Googlebot's navigation parsing
+
+Build confirmed clean. Committed and pushed to origin.
+[2026-04-22 20:22:51] Run #5 finished
