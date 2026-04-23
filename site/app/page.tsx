@@ -3,6 +3,7 @@ import Link from "next/link";
 import CallbackForm from "@/components/CallbackForm";
 import FAQAccordion from "@/components/FAQAccordion";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
   {
@@ -462,23 +463,25 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((svc) => (
-              <div key={svc.title} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="bg-[#23779B] px-5 py-5 flex items-center gap-4">
-                  <div className="text-white/90 shrink-0">{svc.icon}</div>
-                  <h3 className="text-white font-bold text-base leading-snug flex items-center flex-wrap gap-2">
-                    <span>{svc.title}</span>
-                    {svc.comingSoon && (
-                      <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
-                        Coming Soon
-                      </span>
-                    )}
-                  </h3>
+            {services.map((svc, i) => (
+              <ScrollReveal key={svc.title} delay={i * 80}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full">
+                  <div className="bg-[#23779B] px-5 py-5 flex items-center gap-4">
+                    <div className="text-white/90 shrink-0">{svc.icon}</div>
+                    <h3 className="text-white font-bold text-base leading-snug flex items-center flex-wrap gap-2">
+                      <span>{svc.title}</span>
+                      {svc.comingSoon && (
+                        <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
+                          Coming Soon
+                        </span>
+                      )}
+                    </h3>
+                  </div>
+                  <div className="p-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{svc.description}</p>
+                  </div>
                 </div>
-                <div className="p-5">
-                  <p className="text-gray-600 text-sm leading-relaxed">{svc.description}</p>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
           <div className="text-center mt-10">
@@ -617,16 +620,18 @@ export default function HomePage() {
                     </svg>
                   ),
                 },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4 items-start">
-                  <div className="w-11 h-11 rounded-xl bg-[#23779B]/10 text-[#23779B] flex items-center justify-center shrink-0 mt-0.5">
-                    {item.icon}
+              ].map((item, i) => (
+                <ScrollReveal key={item.title} delay={i * 100}>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-11 h-11 rounded-xl bg-[#23779B]/10 text-[#23779B] flex items-center justify-center shrink-0 mt-0.5">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[#1E2828] mb-1">{item.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-[#1E2828] mb-1">{item.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
-                  </div>
-                </div>
+                </ScrollReveal>
               ))}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
