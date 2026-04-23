@@ -122,6 +122,12 @@ const organizationSchema = {
     { "@type": "AdministrativeArea", "name": "Orange County, CA" },
     { "@type": "AdministrativeArea", "name": "San Bernardino County, CA" },
     { "@type": "AdministrativeArea", "name": "Riverside County, CA" },
+    { "@type": "City", "name": "Santa Ana", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Anaheim", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Irvine", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Riverside", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "San Bernardino", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Ontario", "addressRegion": "CA", "addressCountry": "US" },
   ],
   "description":
     "California Care Coordinators is a Santa Ana-based Medi-Cal CalAIM provider delivering housing navigation, enhanced care management, and cash assistance vouchers to help qualifying members achieve and sustain stable housing.",
@@ -132,6 +138,11 @@ const organizationSchema = {
     "contactType": "customer service",
     "areaServed": "US",
     "availableLanguage": "English",
+  },
+  "potentialAction": {
+    "@type": "ApplyAction",
+    "name": "Apply for CalAIM Housing Support",
+    "target": "https://joinccc.org/apply-now",
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -194,6 +205,70 @@ const faqSchema = {
   })),
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Apply for Free CalAIM Housing Support Through Medi-Cal",
+  "description": "Apply for free housing navigation, up to $5,000 in move-in funds, and Enhanced Care Management as a qualifying Medi-Cal member in Southern California.",
+  "totalTime": "PT5M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0",
+  },
+  "supply": [
+    { "@type": "HowToSupply", "name": "Medi-Cal membership" },
+    { "@type": "HowToSupply", "name": "IEHP ID number" },
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Apply Online",
+      "text": "Fill out the online application in about five minutes. You'll need your name, contact info, IEHP ID, and a brief description of your current housing situation.",
+      "url": "https://joinccc.org/apply-now",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Eligibility Review",
+      "text": "CCC reviews your application to confirm you qualify. Most applicants hear back within one to two business days.",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Case Manager Assignment",
+      "text": "If you qualify, a dedicated case manager is assigned to you. They become your single point of contact for housing, healthcare, and every enrolled service.",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Housing Navigation",
+      "text": "Your case manager works the housing search and handles coordination with landlords and housing authorities until you have an approved lease.",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Sustained Support",
+      "text": "Once you're housed, support continues for up to 12 more months. Tenancy Sustaining keeps you connected to your case manager so your housing stays stable.",
+    },
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "California Care Coordinators",
+  "alternateName": "CCC",
+  "url": "https://joinccc.org",
+  "description": "California Care Coordinators provides qualifying Medi-Cal recipients with free housing navigation, Enhanced Care Management, and CalAIM Community Supports in Southern California.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "California Care Coordinators",
+    "url": "https://joinccc.org",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
@@ -204,6 +279,14 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       {/* ── Hero ── */}
       <section

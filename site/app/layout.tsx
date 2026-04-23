@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logos/ccc-logo-blue-fullres.png",
+        width: 1200,
+        height: 630,
         alt: "California Care Coordinators",
       },
     ],
@@ -37,6 +39,12 @@ export const metadata: Metadata = {
     description:
       "Free housing navigation, up to $5,000 in move-in funds, and monthly cash assistance for qualifying Medi-Cal members in Southern California.",
     images: ["/logos/ccc-logo-blue-fullres.png"],
+  },
+  other: {
+    "geo.region": "US-CA",
+    "geo.placename": "Santa Ana, California",
+    "geo.position": "33.7455;-117.8677",
+    "ICBM": "33.7455, -117.8677",
   },
 };
 
