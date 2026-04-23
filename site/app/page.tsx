@@ -8,43 +8,67 @@ const services = [
     title: "Housing Navigation",
     description:
       "Your assigned case manager works the housing search for up to 12 months, coordinating with landlords and housing authorities on your behalf. One goal, an approved lease in your name.",
-    image: "/products/housing-navigation.png",
-    alt: "CalAIM housing navigation case management for Medi-Cal members experiencing homelessness in Southern California",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" />
+        <path d="M9 21V12h6v9" />
+      </svg>
+    ),
   },
   {
     title: "Housing Deposit Voucher",
     description:
       "The deposit and first month's rent are often what stand between a qualified member and a signed lease. This voucher covers both, up to $5,000. Available once per member, per lifetime. Terms and conditions apply.",
-    image: "/products/housing-deposit-voucher.png",
-    alt: "Housing deposit voucher up to $5,000 covering security deposit and first month rent for qualifying Medi-Cal members",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <rect x="2" y="6" width="20" height="13" rx="2" />
+        <path d="M2 10h20" />
+        <path d="M6 14h4" />
+      </svg>
+    ),
   },
   {
     title: "Tenancy Sustaining",
     description:
       "Getting housed is step one. Staying housed takes continued support. Your case manager stays on for up to 12 more months to help you maintain the tenancy you worked to secure.",
-    image: "/products/tenancy-sustaining.png",
-    alt: "Tenancy sustaining case management for Medi-Cal members to maintain stable housing after move-in",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M12 2l2.09 6.26L20 9.27l-4.91 4.73L16.18 20 12 17.27 7.82 20l1.09-6L4 9.27l5.91-.01L12 2z" />
+      </svg>
+    ),
   },
   {
     title: "Cash Assistance Vouchers",
     description:
       "Qualifying low-income members receive monthly cash payments based on Medi-Cal income guidelines for low-income households. Twelve months of additional support while you stabilize.",
-    image: "/products/cash-assistance-vouchers.png",
-    alt: "Monthly cash assistance vouchers for qualifying low-income Medi-Cal members through CalAIM Community Supports",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v1m0 8v1m-3-5h6m-5-2a2 2 0 114 0c0 1.5-4 2-4 3.5h4" />
+      </svg>
+    ),
   },
   {
     title: "Enhanced Care Management",
     description:
       "Managing appointments, referrals, and healthcare paperwork is a job in itself. Your CCC care manager handles that coordination for you, acting as a dedicated advocate for up to 12 months.",
-    image: "/products/enhanced-care-management.png",
-    alt: "Enhanced care management personal healthcare advocate coordinating appointments and referrals for Medi-Cal members",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" />
+      </svg>
+    ),
   },
   {
     title: "Day-Habilitation",
     description:
       "In-person coaching for housed members who qualify. A specialized caregiver works with you on financial planning, agency correspondence, and the practical skills independent living requires. Coming soon.",
-    image: "/products/day-habilitation.png",
-    alt: "Day-habilitation independent living skills coaching for housed Medi-Cal members in Southern California",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+        <circle cx="12" cy="7" r="3" />
+        <path d="M5.5 21a7 7 0 0113 0" />
+        <path d="M12 14v4m-2-2h4" />
+      </svg>
+    ),
     comingSoon: true,
   },
 ];
@@ -426,25 +450,17 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => (
-              <div key={svc.title} className="bg-[#F4F8FC] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative">
-                  <Image
-                    src={svc.image}
-                    alt={svc.alt}
-                    width={400}
-                    height={240}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#23779B] px-4 py-2">
-                    <h3 className="text-white font-bold text-base flex items-center flex-wrap gap-2">
-                      <span>{svc.title}</span>
-                      {svc.comingSoon && (
-                        <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
-                          Coming Soon
-                        </span>
-                      )}
-                    </h3>
-                  </div>
+              <div key={svc.title} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="bg-[#23779B] px-5 py-5 flex items-center gap-4">
+                  <div className="text-white/90 shrink-0">{svc.icon}</div>
+                  <h3 className="text-white font-bold text-base leading-snug flex items-center flex-wrap gap-2">
+                    <span>{svc.title}</span>
+                    {svc.comingSoon && (
+                      <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
+                        Coming Soon
+                      </span>
+                    )}
+                  </h3>
                 </div>
                 <div className="p-5">
                   <p className="text-gray-600 text-sm leading-relaxed">{svc.description}</p>
