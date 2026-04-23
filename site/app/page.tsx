@@ -9,42 +9,42 @@ const services = [
     description:
       "Your assigned case manager works the housing search for up to 12 months, coordinating with landlords and housing authorities on your behalf. One goal, an approved lease in your name.",
     image: "/products/housing-navigation.png",
-    alt: "Housing Navigation",
+    alt: "CalAIM housing navigation case management for Medi-Cal members experiencing homelessness in Southern California",
   },
   {
     title: "Housing Deposit Voucher",
     description:
       "The deposit and first month's rent are often what stand between a qualified member and a signed lease. This voucher covers both, up to $5,000. Available once per member, per lifetime. Terms and conditions apply.",
     image: "/products/housing-deposit-voucher.png",
-    alt: "Housing Deposit Voucher",
+    alt: "Housing deposit voucher up to $5,000 covering security deposit and first month rent for qualifying Medi-Cal members",
   },
   {
     title: "Tenancy Sustaining",
     description:
       "Getting housed is step one. Staying housed takes continued support. Your case manager stays on for up to 12 more months to help you maintain the tenancy you worked to secure.",
     image: "/products/tenancy-sustaining.png",
-    alt: "Tenancy Sustaining",
+    alt: "Tenancy sustaining case management for Medi-Cal members to maintain stable housing after move-in",
   },
   {
     title: "Cash Assistance Vouchers",
     description:
       "Qualifying low-income members receive monthly cash payments based on Medi-Cal income guidelines for low-income households. Twelve months of additional support while you stabilize.",
     image: "/products/cash-assistance-vouchers.png",
-    alt: "Cash Assistance Vouchers",
+    alt: "Monthly cash assistance vouchers for qualifying low-income Medi-Cal members through CalAIM Community Supports",
   },
   {
     title: "Enhanced Care Management",
     description:
       "Managing appointments, referrals, and healthcare paperwork is a job in itself. Your CCC care manager handles that coordination for you, acting as a dedicated advocate for up to 12 months.",
     image: "/products/enhanced-care-management.png",
-    alt: "Enhanced Care Management",
+    alt: "Enhanced care management personal healthcare advocate coordinating appointments and referrals for Medi-Cal members",
   },
   {
     title: "Day-Habilitation",
     description:
       "In-person coaching for housed members who qualify. A specialized caregiver works with you on financial planning, agency correspondence, and the practical skills independent living requires. Coming soon.",
     image: "/products/day-habilitation.png",
-    alt: "Day-Habilitation",
+    alt: "Day-habilitation independent living skills coaching for housed Medi-Cal members in Southern California",
     comingSoon: true,
   },
 ];
@@ -57,11 +57,11 @@ const metrics = [
 ];
 
 const partners = [
-  { image: "/gallery/partner-1-unitedway-fullres.png", alt: "United Way" },
-  { image: "/gallery/partner-2-hacsb-fullres.png", alt: "HACSB" },
-  { image: "/gallery/partner-3-harivco-fullres.png", alt: "HARIVCO" },
-  { image: "/gallery/partner-4-hud-fullres.png", alt: "HUD" },
-  { image: "/gallery/partner-5-calaim-fullres.png", alt: "CalAIM" },
+  { image: "/gallery/partner-1-unitedway-fullres.png", alt: "United Way - Community nonprofit partner of California Care Coordinators" },
+  { image: "/gallery/partner-2-hacsb-fullres.png", alt: "HACSB - Housing Authority of the County of San Bernardino" },
+  { image: "/gallery/partner-3-harivco-fullres.png", alt: "HARIVCO - Housing Authority of the County of Riverside" },
+  { image: "/gallery/partner-4-hud-fullres.png", alt: "HUD - U.S. Department of Housing and Urban Development" },
+  { image: "/gallery/partner-5-calaim-fullres.png", alt: "CalAIM - California Advancing and Innovating Medi-Cal" },
 ];
 
 const steps = [
@@ -106,6 +106,7 @@ const faqs = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness", "SocialService"],
+  "@id": "https://joinccc.org/#organization",
   "name": "California Care Coordinators",
   "alternateName": "CCC",
   "url": "https://joinccc.org",
@@ -267,15 +268,62 @@ const howToSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://joinccc.org/#website",
   "name": "California Care Coordinators",
   "alternateName": "CCC",
   "url": "https://joinccc.org",
   "description": "California Care Coordinators provides qualifying Medi-Cal recipients with free housing navigation, Enhanced Care Management, and CalAIM Community Supports in Southern California.",
   "publisher": {
     "@type": "Organization",
-    "name": "California Care Coordinators",
-    "url": "https://joinccc.org",
+    "@id": "https://joinccc.org/#organization",
   },
+};
+
+const servicesListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "CalAIM Community Supports Services",
+  "description": "Free housing and healthcare coordination services available to qualifying Medi-Cal members through California Care Coordinators in Southern California.",
+  "url": "https://joinccc.org",
+  "numberOfItems": 6,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Housing Navigation",
+      "description": "Dedicated case management for up to 12 months helping qualifying Medi-Cal members experiencing homelessness or housing instability secure an approved residential lease.",
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Housing Deposit Voucher",
+      "description": "Covers security deposit and first month's rent up to $5,000 for qualifying Medi-Cal members. A once-per-member-per-lifetime benefit under CalAIM Community Supports.",
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tenancy Sustaining",
+      "description": "Up to 12 months of continued case management after housing is secured to help Medi-Cal members maintain stable long-term tenancy.",
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Cash Assistance Vouchers",
+      "description": "Monthly cash assistance for up to 12 months for qualifying low-income Medi-Cal members based on MBSAC household income levels.",
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Enhanced Care Management",
+      "description": "A dedicated personal healthcare advocate coordinates appointments, referrals, and healthcare paperwork for qualifying Medi-Cal members for up to 12 months.",
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Day-Habilitation",
+      "description": "In-person coaching for housed Medi-Cal members on financial planning, independent living skills, and administrative tasks. Coming soon.",
+    },
+  ],
 };
 
 export default function HomePage() {
@@ -296,6 +344,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesListSchema) }}
       />
       {/* ── Hero ── */}
       <section

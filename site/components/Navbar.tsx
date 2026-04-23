@@ -24,7 +24,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-[#1E2828] hover:text-[#23779B] font-medium transition-colors">
               Home
             </Link>
