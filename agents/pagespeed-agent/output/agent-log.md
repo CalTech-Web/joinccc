@@ -77,3 +77,14 @@ The Next.js site already scores 98/100 locally with Lighthouse CLI mobile. There
 ### Commits
 - `de9f344` — pagespeed: move Google Fonts from CSS @import to HTML head with preconnect
 - `ac456c7` — Revert "pagespeed: move Google Fonts from CSS @import to HTML head with preconnect"
+## Run #2 Summary
+
+**Key discovery:** `joinccc.org` is still on GoDaddy — all prior PSI measurements were analyzing the wrong site. The Vercel Next.js project already scores **98/100** locally (Lighthouse CLI, mobile throttling).
+
+**Fix attempted:** Moved Google Fonts from CSS `@import` to `<link rel="stylesheet">` + preconnect hints in `layout.tsx`, targeting the render-blocking CSS parse waterfall.
+
+**Result: Reverted.** The `<link rel="stylesheet">` in HTML head made Lighthouse treat it as a prominent render-blocking resource on throttled connections, dropping the score from 98 → 85-87 (FCP degraded from 0.9s to 2.6s, LCP from 2.5s to 3.4s).
+
+**Pattern across both runs:** Both `next/font/google` and the HTML `<link>` approach hurt the Next.js site. The CSS `@import` baseline at 98/100 is already near-optimal for this codebase. The low PSI scores (65-67) seen in the browser reflect the legacy GoDaddy site, not the Vercel Next.js project.
+[2026-04-22 20:51:20] Run #2 finished
+[2026-04-22 20:51:20] Reached max loops (2). Stopping.

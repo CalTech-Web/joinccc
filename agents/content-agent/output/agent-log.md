@@ -78,3 +78,15 @@ Deployed and Ready. Six targeted changes shipped:
 
 Live at `https://site-mnyc21ux5-brandon-7928s-projects.vercel.app`.
 [2026-04-22 20:15:00] Run #5 finished
+Deployed and Ready. Six changes shipped in this run:
+
+- **Metrics subtitle** — stopped restating the card numbers. New line explains the insight gap that makes CCC worth applying to: "Most of these members had Medi-Cal for years before learning these services were included in their existing coverage."
+- **"Provider Services"** → **"What's Covered"** — drops the internal program-management label for a member-facing frame.
+- **Partners subtitle** — cut "real power to open doors" cliché; replaced with what the partners actually bring: "The vouchers, the funding, and the regional relationships that get members housed run through these organizations."
+- **How It Works Step 2** — removed "CalAIM eligibility criteria" jargon; now reads "to confirm you qualify."
+- **How It Works Step 3** — "assigned to your case" → "assigned to you."
+- **How It Works Step 4** — "working toward an approved residential lease" → "until you have an approved lease."
+
+Live at `https://site-mnyc21ux5-brandon-7928s-projects.vercel.app`.
+[2026-04-22 20:08:10] Run #5 finished
+[2026-04-22 20:08:10] Reached max loops (5). Stopping.

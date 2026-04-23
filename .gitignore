@@ -3,3 +3,4 @@ site/.next
 .DS_Store
 *.env.local
 .playwright-mcp/
+.vercel

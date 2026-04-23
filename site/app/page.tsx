@@ -504,30 +504,33 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {steps.map((s, i) => {
+              const isFirst = i === 0;
+              const isLast = i === steps.length - 1;
+              const lastColClass = isLast ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : "";
               const inner = (
                 <>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ${i === 0 ? "bg-white text-[#23779B]" : "bg-white/20 text-white"}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ${isFirst ? "bg-white text-[#23779B]" : "bg-white/20 text-white"}`}>
                     {s.step}
                   </div>
-                  {i === 0 && (
+                  {isFirst && (
                     <span className="inline-block text-white/60 text-xs font-semibold uppercase tracking-widest mb-2">You Are Here</span>
                   )}
                   <h3 className="text-white font-bold mb-2">{s.title}</h3>
                   <p className="text-white/75 text-sm leading-relaxed">{s.description}</p>
                 </>
               );
-              return i === 0 ? (
+              return isFirst ? (
                 <a
                   key={s.step}
                   href="#callback-form"
-                  className={`step-active border border-white/30 rounded-2xl p-6 text-center block cursor-pointer${i === 4 ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : ""}`}
+                  className={`step-active border border-white/30 rounded-2xl p-6 text-center block cursor-pointer${lastColClass}`}
                 >
                   {inner}
                 </a>
               ) : (
                 <div
                   key={s.step}
-                  className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center${i === 4 ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : ""}`}
+                  className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center${lastColClass}`}
                 >
                   {inner}
                 </div>
@@ -546,34 +549,93 @@ export default function HomePage() {
       </section>
 
       {/* ── Why CCC ── */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-6">A Person, Not a Packet</h2>
-              <div className="space-y-5 text-gray-700 leading-relaxed">
-                <p>Most housing programs pass you through a waiting list and hand you a packet. CCC assigns you a person.</p>
-                <p>Your case manager handles the housing search, coordinates with local housing authorities, and manages the paperwork so you don&apos;t have to. If you qualify for the Housing Deposit Voucher, we&apos;ll cover your security deposit and first month&apos;s rent, up to $5,000. Monthly cash assistance is available for low-income members on top of that.</p>
-                <p>We&apos;ve deployed over $1.7 million in voucher funds and helped 600 members sign a lease since 2023. All through your existing Medi-Cal benefits, at no cost to you.</p>
+          <div className="text-center mb-14">
+            <span className="inline-block bg-[#23779B]/10 text-[#23779B] text-sm font-semibold px-4 py-1 rounded-full mb-4">Why California Care Coordinators</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-4">A Person, Not a Packet</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">Most housing programs hand you a waiting list. CCC assigns you a case manager who works on your behalf until you have a signed lease.</p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left: differentiators */}
+            <div className="space-y-6">
+              {[
+                {
+                  title: "One person handles everything",
+                  body: "Your case manager coordinates housing search, landlord outreach, housing authority paperwork, and every enrolled service. You have one number to call.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Up to $5,000 in move-in funds",
+                  body: "Qualifying members receive a Housing Deposit Voucher that covers the security deposit and first month's rent so a lack of cash never blocks a signed lease.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 14h4"/>
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Completely free through Medi-Cal",
+                  body: "Every service is funded under CalAIM. There are no fees, no co-pays, and no hidden costs. If you have Medi-Cal, you likely already have access.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M12 2l2.09 6.26L20 9.27l-4.91 4.73L16.18 20 12 17.27 7.82 20l1.09-6L4 9.27l5.91-.01L12 2z"/>
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Support continues after move-in",
+                  body: "Once you are housed, your case manager stays on for up to 12 more months through Tenancy Sustaining, so your housing stays stable.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/>
+                    </svg>
+                  ),
+                },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-[#23779B]/10 text-[#23779B] flex items-center justify-center shrink-0 mt-0.5">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#1E2828] mb-1">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <a
+                  href="#callback-form"
+                  className="inline-flex items-center justify-center bg-[#23779B] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+                >
+                  Check If I Qualify
+                </a>
+                <a
+                  href="tel:8885822282"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-[#23779B] text-[#23779B] font-bold px-7 py-3.5 rounded-full hover:bg-[#23779B]/5 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                  (888) 582-2282
+                </a>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#23779B] text-white rounded-2xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">3,000+</div>
-                <div className="text-white/80 text-sm">Active Members</div>
-              </div>
-              <div className="bg-[#1E2828] text-white rounded-2xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">600+</div>
-                <div className="text-white/80 text-sm">Members Housed</div>
-              </div>
-              <div className="bg-[#1E2828] text-white rounded-2xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">$1.7M+</div>
-                <div className="text-white/80 text-sm">Vouchers Funded</div>
-              </div>
-              <div className="bg-[#23779B] text-white rounded-2xl p-6 text-center">
-                <div className="text-4xl font-bold mb-2">60+</div>
-                <div className="text-white/80 text-sm">Case Managers</div>
-              </div>
+            {/* Right: stats */}
+            <div className="grid grid-cols-2 gap-5">
+              {[
+                { value: "3,000+", label: "Active Members Served", color: "bg-[#23779B]" },
+                { value: "600+", label: "Members Successfully Housed", color: "bg-[#1E2828]" },
+                { value: "$1.7M+", label: "Voucher Funds Deployed", color: "bg-[#1E2828]" },
+                { value: "60+", label: "Case Managers on Staff", color: "bg-[#23779B]" },
+              ].map((stat) => (
+                <div key={stat.label} className={`${stat.color} text-white rounded-2xl p-7 flex flex-col justify-between`}>
+                  <div className="text-4xl sm:text-5xl font-bold mb-3">{stat.value}</div>
+                  <div className="text-white/70 text-sm font-medium leading-snug">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

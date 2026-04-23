@@ -163,3 +163,20 @@ Run #5 complete. Here's what shipped:
 
 Build confirmed clean. Committed and pushed to origin.
 [2026-04-22 20:22:51] Run #5 finished
+Run 5 complete. Here's what shipped:
+
+**`site/app/page.tsx`**
+- Added `@id: "https://joinccc.org/#organization"` to Organization schema and `@id: "https://joinccc.org/#website"` to WebSite schema, with `publisher` cross-referencing via `@id` — establishes proper entity anchors for Google's knowledge graph
+- Added new `ItemList` schema for all 6 CalAIM services with position, name, and description per item — eligible for list rich results
+- Improved all 6 service image alt texts from bare names to keyword-rich descriptions (e.g., "CalAIM housing navigation case management for Medi-Cal members experiencing homelessness in Southern California")
+- Improved all 5 partner alt texts from acronyms to full organization names (e.g., "HACSB - Housing Authority of the County of San Bernardino")
+
+**`site/app/apply-now/page.tsx`**
+- Added `@id`, `publisher`, `datePublished` (2023-01-01), `dateModified` (2026-04-22), and `about` to WebPage schema; updated all internal references to use `#organization` and `#website` anchors for proper cross-schema linking
+
+**`site/components/Navbar.tsx`**
+- Added `aria-label="Primary navigation"` to desktop nav
+
+Build clean, committed, pushed.
+[2026-04-22 20:28:13] Run #5 finished
+[2026-04-22 20:28:13] Reached max loops (5). Stopping.
