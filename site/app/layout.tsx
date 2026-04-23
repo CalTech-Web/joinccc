@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "California Care Coordinators provides qualifying Medi-Cal recipients with Enhanced Care Management and Community Supports under CalAIM. Housing navigation, deposit vouchers, and cash assistance in Southern California.",
   keywords:
-    "CalAIM, Community Supports, Medi-Cal, housing navigation, Enhanced Care Management, California Care Coordinators, CalOptima, IEHP, housing deposit voucher, tenancy sustaining, cash assistance vouchers, Santa Ana CA",
+    "CalAIM, Community Supports, Medi-Cal, housing navigation, Enhanced Care Management, California Care Coordinators, CalOptima, IEHP, housing deposit voucher, tenancy sustaining, cash assistance vouchers, Santa Ana CA, CalAIM housing support Southern California, free housing assistance Medi-Cal, homeless services Orange County, CalAIM provider Orange County, Medi-Cal housing assistance, housing deposit voucher California, move-in funds Medi-Cal, housing instability support, case manager Medi-Cal, CalAIM community supports provider",
   alternates: {
     canonical: "/",
   },

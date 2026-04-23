@@ -39,12 +39,51 @@ const breadcrumbSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Apply for CalAIM Housing Support | California Care Coordinators",
+  "url": "https://joinccc.org/apply-now",
+  "description": "Apply online for free CalAIM housing support in Southern California. Qualifying Medi-Cal members receive housing navigation, up to $5,000 in move-in funds, and Enhanced Care Management at no cost.",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "url": "https://joinccc.org" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joinccc.org" },
+      { "@type": "ListItem", "position": 2, "name": "Apply Now", "item": "https://joinccc.org/apply-now" },
+    ],
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2"],
+  },
+  "potentialAction": {
+    "@type": "ApplyAction",
+    "name": "Apply for CalAIM Housing Support",
+    "target": "https://joinccc.org/apply-now",
+    "object": {
+      "@type": "Service",
+      "name": "CalAIM Community Supports",
+      "provider": {
+        "@type": "Organization",
+        "name": "California Care Coordinators",
+        "url": "https://joinccc.org",
+      },
+    },
+  },
+};
+
 export default function ApplyNowPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       {/* Page Header */}
       <section

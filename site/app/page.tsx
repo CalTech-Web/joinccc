@@ -94,6 +94,10 @@ const faqs = [
     a: "CalAIM, short for California Advancing and Innovating Medi-Cal, is a state initiative that expanded Medi-Cal to include housing-related services. CCC is an approved CalAIM provider, which is why its services are available through your existing Medi-Cal benefits at no cost.",
   },
   {
+    q: "What is Enhanced Care Management?",
+    a: "Enhanced Care Management is a 12-month service where your CCC care manager acts as a Personal Healthcare Assistant. They coordinate your appointments, referrals, and healthcare paperwork so you can focus on your health instead of the administrative burden. It's available to qualifying members who have difficulty managing their ongoing healthcare needs.",
+  },
+  {
     q: "Are CCC's services free to members?",
     a: "Yes. CCC's services are funded through Medi-Cal under the CalAIM program. There is no cost to qualifying members. To confirm your eligibility, call (888) 582-2282 or email apply@joinccc.org.",
   },
@@ -101,7 +105,7 @@ const faqs = [
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
+  "@type": ["Organization", "LocalBusiness", "SocialService"],
   "name": "California Care Coordinators",
   "alternateName": "CCC",
   "url": "https://joinccc.org",
@@ -128,6 +132,11 @@ const organizationSchema = {
     { "@type": "City", "name": "Riverside", "addressRegion": "CA", "addressCountry": "US" },
     { "@type": "City", "name": "San Bernardino", "addressRegion": "CA", "addressCountry": "US" },
     { "@type": "City", "name": "Ontario", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Garden Grove", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Fullerton", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Orange", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Corona", "addressRegion": "CA", "addressCountry": "US" },
+    { "@type": "City", "name": "Fontana", "addressRegion": "CA", "addressCountry": "US" },
   ],
   "description":
     "California Care Coordinators is a Santa Ana-based Medi-Cal CalAIM provider delivering housing navigation, enhanced care management, and cash assistance vouchers to help qualifying members achieve and sustain stable housing.",

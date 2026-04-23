@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/tos-privacy-policy",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     url: "https://joinccc.org/tos-privacy-policy",
