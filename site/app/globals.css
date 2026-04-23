@@ -16,3 +16,23 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Ubuntu', system-ui, sans-serif;
 }
+
+@keyframes hero-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-gradient {
+  background: linear-gradient(-45deg, #23779B, #1a5a75, #1E2828, #1d5e7a, #23779B);
+  background-size: 400% 400%;
+  animation: hero-shimmer 15s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient {
+    animation: none;
+    background: linear-gradient(135deg, #23779B 0%, #1a5a75 60%, #1E2828 100%);
+    background-size: 100% 100%;
+  }
+}

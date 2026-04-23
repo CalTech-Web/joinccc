@@ -374,10 +374,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesListSchema) }}
       />
       {/* ── Hero ── */}
-      <section
-        className="relative min-h-[600px] flex items-center"
-        style={{ background: "linear-gradient(135deg, #23779B 0%, #1a5a75 60%, #1E2828 100%)" }}
-      >
+      <section className="hero-gradient relative min-h-[600px] flex items-center">
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -417,6 +414,12 @@ export default function HomePage() {
               <CallbackForm />
             </div>
           </div>
+        </div>
+        {/* Wave transition into metrics section */}
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10" aria-hidden="true">
+          <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="block w-full h-8 sm:h-10 md:h-14" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C320,0 640,60 960,20 C1120,0 1280,50 1440,30 L1440,60 L0,60 Z" fill="#F4F8FC" />
+          </svg>
         </div>
       </section>
 
