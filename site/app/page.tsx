@@ -453,6 +453,47 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        {/* Faint skyline silhouette sitting above the wave transition */}
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-[5]" aria-hidden="true">
+          <svg
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+            className="block w-full h-28 sm:h-36 md:h-44 opacity-[0.10]"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="skyline-fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#A9DBE8" stopOpacity="0" />
+                <stop offset="100%" stopColor="#A9DBE8" stopOpacity="1" />
+              </linearGradient>
+            </defs>
+            <g fill="url(#skyline-fade)">
+              {/* Back layer: distant low-rise skyline */}
+              <path d="M0,220 L0,160 L40,160 L40,140 L90,140 L90,155 L140,155 L140,130 L180,130 L180,145 L230,145 L230,120 L280,120 L280,150 L330,150 L330,135 L380,135 L380,160 L430,160 L430,125 L480,125 L480,150 L530,150 L530,140 L590,140 L590,165 L640,165 L640,145 L700,145 L700,130 L760,130 L760,150 L820,150 L820,135 L880,135 L880,155 L940,155 L940,140 L1000,140 L1000,160 L1060,160 L1060,145 L1120,145 L1120,130 L1180,130 L1180,150 L1240,150 L1240,140 L1300,140 L1300,155 L1360,155 L1360,145 L1440,145 L1440,220 Z" />
+            </g>
+            <g fill="#A9DBE8" fillOpacity="0.95">
+              {/* Front layer: taller mixed buildings */}
+              <path d="M0,220 L0,180 L30,180 L30,170 L60,170 L60,110 L70,110 L70,100 L95,100 L95,110 L110,110 L110,160 L145,160 L145,145 L175,145 L175,95 L190,95 L190,85 L215,85 L215,95 L230,95 L230,155 L260,155 L260,170 L295,170 L295,150 L320,150 L320,130 L345,130 L345,90 L365,90 L365,80 L395,80 L395,90 L415,90 L415,140 L445,140 L445,165 L475,165 L475,150 L505,150 L505,120 L530,120 L530,100 L555,100 L555,120 L580,120 L580,160 L610,160 L610,175 L640,175 L640,155 L670,155 L670,130 L695,130 L695,100 L720,100 L720,110 L745,110 L745,95 L770,95 L770,85 L795,85 L795,75 L820,75 L820,85 L840,85 L840,140 L870,140 L870,160 L900,160 L900,145 L930,145 L930,170 L960,170 L960,140 L990,140 L990,105 L1015,105 L1015,95 L1045,95 L1045,105 L1065,105 L1065,135 L1090,135 L1090,160 L1120,160 L1120,145 L1150,145 L1150,175 L1180,175 L1180,150 L1210,150 L1210,120 L1240,120 L1240,95 L1265,95 L1265,85 L1295,85 L1295,95 L1315,95 L1315,135 L1345,135 L1345,160 L1375,160 L1375,150 L1410,150 L1410,170 L1440,170 L1440,220 Z" />
+              {/* Water towers / rooftop details */}
+              <rect x="72" y="90" width="8" height="10" />
+              <rect x="74" y="82" width="4" height="8" />
+              <rect x="195" y="75" width="6" height="10" />
+              <rect x="196" y="68" width="4" height="7" />
+              <rect x="370" y="70" width="6" height="10" />
+              <rect x="371" y="62" width="4" height="8" />
+              <rect x="802" y="65" width="6" height="10" />
+              <rect x="803" y="58" width="4" height="7" />
+              <rect x="1272" y="75" width="6" height="10" />
+              <rect x="1273" y="67" width="4" height="8" />
+              {/* Small antennae / spires */}
+              <rect x="165" y="75" width="2" height="20" />
+              <rect x="525" y="90" width="2" height="10" />
+              <rect x="710" y="85" width="2" height="15" />
+              <rect x="1030" y="85" width="2" height="10" />
+              <rect x="1395" y="140" width="2" height="10" />
+            </g>
+          </svg>
+        </div>
         {/* Wave transition into metrics section */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10" aria-hidden="true">
           <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="block w-full h-10 sm:h-14 md:h-20" xmlns="http://www.w3.org/2000/svg">
