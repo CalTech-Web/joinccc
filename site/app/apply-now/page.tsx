@@ -114,7 +114,7 @@ export default function ApplyNowPage() {
       </section>
 
       {/* Application Form */}
-      <section className="relative py-16 sm:py-20 bg-[#F4F8FC] overflow-hidden">
+      <section className="relative py-16 sm:py-20 bg-[#F4F8FC]">
         <div className="absolute inset-0 dot-grid opacity-25 pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] gap-10 lg:gap-12 items-start">
