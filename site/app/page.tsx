@@ -946,12 +946,62 @@ export default function HomePage() {
       <section className="relative py-20 sm:py-24 overflow-hidden bg-[#0e1414]">
         <div className="absolute inset-0 hero-mesh opacity-80" aria-hidden="true" />
         <div className="absolute inset-0 grain" aria-hidden="true" />
+        {/* Topographic contour map layer */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.18] pointer-events-none"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          <g fill="none" stroke="#A9DBE8" strokeWidth="1" strokeLinecap="round">
+            {/* Peak cluster A — upper left */}
+            <g transform="translate(320 220) rotate(-12)">
+              <ellipse cx="0" cy="0" rx="40" ry="26" />
+              <ellipse cx="6" cy="-4" rx="78" ry="50" />
+              <ellipse cx="-6" cy="6" rx="120" ry="76" />
+              <ellipse cx="10" cy="-8" rx="168" ry="104" />
+              <ellipse cx="-12" cy="10" rx="220" ry="134" />
+              <ellipse cx="14" cy="-14" rx="280" ry="168" />
+              <ellipse cx="-16" cy="18" rx="346" ry="206" />
+            </g>
+            {/* Peak cluster B — lower right */}
+            <g transform="translate(1140 400) rotate(18)">
+              <ellipse cx="0" cy="0" rx="36" ry="24" />
+              <ellipse cx="-6" cy="4" rx="72" ry="46" />
+              <ellipse cx="8" cy="-4" rx="112" ry="70" />
+              <ellipse cx="-10" cy="8" rx="156" ry="96" />
+              <ellipse cx="12" cy="-10" rx="204" ry="124" />
+              <ellipse cx="-14" cy="14" rx="256" ry="154" />
+              <ellipse cx="16" cy="-16" rx="310" ry="184" />
+            </g>
+            {/* Secondary ridge — center top */}
+            <g transform="translate(760 80) rotate(6)">
+              <ellipse cx="0" cy="0" rx="60" ry="22" />
+              <ellipse cx="-5" cy="4" rx="110" ry="38" />
+              <ellipse cx="8" cy="-4" rx="168" ry="56" />
+              <ellipse cx="-10" cy="6" rx="230" ry="76" />
+            </g>
+          </g>
+        </svg>
+        {/* Street-map grid layer */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.08] pointer-events-none"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern id="street-grid" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+              <path d="M0 0 L80 0 M0 40 L80 40 M0 0 L0 80 M40 0 L40 80" stroke="#A9DBE8" strokeWidth="1" fill="none" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#street-grid)" />
+        </svg>
         <div className="orb animate-float-slow hidden sm:block" style={{ background: "#2FB5DB", width: 340, height: 340, top: -60, left: -40, opacity: 0.4 }} aria-hidden="true" />
-        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#F5B642", width: 280, height: 280, bottom: -40, right: -40, opacity: 0.3 }} aria-hidden="true" />
+        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#6FC8DF", width: 280, height: 280, bottom: -40, right: -40, opacity: 0.3 }} aria-hidden="true" />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative glass-strong rounded-3xl p-10 sm:p-14 text-center overflow-hidden">
-            <div className="absolute inset-0 dot-grid-light opacity-30 pointer-events-none" aria-hidden="true" />
             <div className="relative">
               <span className="inline-block glass text-white text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-5">
                 Ready in Five Minutes
