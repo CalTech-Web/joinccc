@@ -51,15 +51,17 @@ export default function TosPrivacyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Page Header */}
-      <section
-        className="py-16"
-        style={{ background: "linear-gradient(135deg, #23779B 0%, #1E2828 100%)" }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-2xl sm:text-4xl font-bold text-white mb-4">
-            Terms of Service &amp; Privacy Policy
+      <section className="hero-mesh grain relative overflow-hidden h-[300px] flex items-center">
+        <div className="orb animate-float-slow hidden sm:block" style={{ background: "#2FB5DB", width: 260, height: 260, top: -60, left: -40, opacity: 0.35 }} aria-hidden="true" />
+        <div className="absolute inset-0 dot-grid-light opacity-30 pointer-events-none" aria-hidden="true" />
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-block glass-strong text-white text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4">
+            Legal
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight">
+            Terms of Service &amp; <span className="text-gradient-white">Privacy Policy</span>
           </h1>
-          <p className="text-white/80 text-lg">
+          <p className="text-white/80 text-sm sm:text-base">
             Last updated: April 2026 | CA Care Coordinators LTD
           </p>
         </div>
@@ -67,40 +69,44 @@ export default function TosPrivacyPage() {
 
       {/* Content */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] gap-10 lg:gap-12 items-start">
 
-          {/* Table of Contents */}
-          <nav aria-label="Page sections" className="mb-12 bg-[#F4F8FC] rounded-2xl p-6">
-            <h2 className="text-lg font-bold text-[#1E2828] mb-4">Table of Contents</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              <div>
-                <p className="font-semibold text-[#23779B] mb-2">Terms of Service</p>
-                <ol className="space-y-1 text-gray-600">
-                  <li><a href="#tos-1" className="hover:text-[#23779B] hover:underline transition-colors">1. Acceptance of Terms</a></li>
-                  <li><a href="#tos-2" className="hover:text-[#23779B] hover:underline transition-colors">2. Services</a></li>
-                  <li><a href="#tos-3" className="hover:text-[#23779B] hover:underline transition-colors">3. Eligibility</a></li>
-                  <li><a href="#tos-4" className="hover:text-[#23779B] hover:underline transition-colors">4. Housing Deposit Voucher Terms</a></li>
-                  <li><a href="#tos-5" className="hover:text-[#23779B] hover:underline transition-colors">5. Disclaimer</a></li>
-                  <li><a href="#tos-6" className="hover:text-[#23779B] hover:underline transition-colors">6. Limitation of Liability</a></li>
-                </ol>
-              </div>
-              <div>
-                <p className="font-semibold text-[#23779B] mb-2">Privacy Policy</p>
-                <ol className="space-y-1 text-gray-600">
-                  <li><a href="#pp-1" className="hover:text-[#23779B] hover:underline transition-colors">1. Information We Collect</a></li>
-                  <li><a href="#pp-2" className="hover:text-[#23779B] hover:underline transition-colors">2. HIPAA Compliance</a></li>
-                  <li><a href="#pp-3" className="hover:text-[#23779B] hover:underline transition-colors">3. California Consumer Privacy Act (CCPA)</a></li>
-                  <li><a href="#pp-4" className="hover:text-[#23779B] hover:underline transition-colors">4. How We Use Your Information</a></li>
-                  <li><a href="#pp-5" className="hover:text-[#23779B] hover:underline transition-colors">5. Information Sharing</a></li>
-                  <li><a href="#pp-6" className="hover:text-[#23779B] hover:underline transition-colors">6. Data Security</a></li>
-                  <li><a href="#pp-7" className="hover:text-[#23779B] hover:underline transition-colors">7. reCAPTCHA</a></li>
-                  <li><a href="#pp-8" className="hover:text-[#23779B] hover:underline transition-colors">8. Contact Us</a></li>
-                </ol>
-              </div>
-            </div>
-          </nav>
+            {/* Table of Contents (sticky on desktop) */}
+            <aside className="lg:sticky lg:top-24">
+              <nav aria-label="Page sections" className="bg-[#F4F8FC] rounded-2xl p-6 border border-gray-100">
+                <h2 className="text-lg font-bold text-[#1E2828] mb-4">Table of Contents</h2>
+                <div className="space-y-5 text-sm">
+                  <div>
+                    <p className="font-semibold text-[#23779B] mb-2 text-xs uppercase tracking-[0.14em]">Terms of Service</p>
+                    <ol className="space-y-1.5 text-gray-600">
+                      <li><a href="#tos-1" className="hover:text-[#23779B] hover:underline transition-colors">1. Acceptance of Terms</a></li>
+                      <li><a href="#tos-2" className="hover:text-[#23779B] hover:underline transition-colors">2. Services</a></li>
+                      <li><a href="#tos-3" className="hover:text-[#23779B] hover:underline transition-colors">3. Eligibility</a></li>
+                      <li><a href="#tos-4" className="hover:text-[#23779B] hover:underline transition-colors">4. Housing Deposit Voucher Terms</a></li>
+                      <li><a href="#tos-5" className="hover:text-[#23779B] hover:underline transition-colors">5. Disclaimer</a></li>
+                      <li><a href="#tos-6" className="hover:text-[#23779B] hover:underline transition-colors">6. Limitation of Liability</a></li>
+                    </ol>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#23779B] mb-2 text-xs uppercase tracking-[0.14em]">Privacy Policy</p>
+                    <ol className="space-y-1.5 text-gray-600">
+                      <li><a href="#pp-1" className="hover:text-[#23779B] hover:underline transition-colors">1. Information We Collect</a></li>
+                      <li><a href="#pp-2" className="hover:text-[#23779B] hover:underline transition-colors">2. HIPAA Compliance</a></li>
+                      <li><a href="#pp-3" className="hover:text-[#23779B] hover:underline transition-colors">3. California Consumer Privacy Act (CCPA)</a></li>
+                      <li><a href="#pp-4" className="hover:text-[#23779B] hover:underline transition-colors">4. How We Use Your Information</a></li>
+                      <li><a href="#pp-5" className="hover:text-[#23779B] hover:underline transition-colors">5. Information Sharing</a></li>
+                      <li><a href="#pp-6" className="hover:text-[#23779B] hover:underline transition-colors">6. Data Security</a></li>
+                      <li><a href="#pp-7" className="hover:text-[#23779B] hover:underline transition-colors">7. reCAPTCHA</a></li>
+                      <li><a href="#pp-8" className="hover:text-[#23779B] hover:underline transition-colors">8. Contact Us</a></li>
+                    </ol>
+                  </div>
+                </div>
+              </nav>
+            </aside>
 
-          <div className="prose prose-lg text-[#1E2828]">
+            {/* Content column */}
+            <div className="min-w-0 prose prose-lg text-[#1E2828]">
 
             {/* Terms of Service */}
             <div className="mb-12">
@@ -198,15 +204,19 @@ export default function TosPrivacyPage() {
                 </p>
               </address>
             </div>
-          </div>
 
-          <div className="mt-12 text-center">
-            <Link
-              href="/"
-              className="inline-block bg-[#23779B] text-white font-bold px-8 py-3 rounded-full hover:bg-[#1a5a75] transition-colors"
-            >
-              Back to Home
-            </Link>
+              <div className="mt-12 text-center lg:text-left">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white font-bold px-8 py-3.5 rounded-full hover:-translate-y-0.5 transition-all shadow-[0_12px_30px_-10px_rgba(35,119,155,0.55)] hover:shadow-[0_16px_36px_-10px_rgba(35,119,155,0.7)]"
+                >
+                  Back to Home
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
