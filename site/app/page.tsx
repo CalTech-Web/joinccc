@@ -376,120 +376,190 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesListSchema) }}
       />
       {/* ── Hero ── */}
-      <section className="hero-gradient relative min-h-[600px] flex items-center">
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="hero-mesh grain relative overflow-hidden flex items-center min-h-[680px]">
+        {/* Floating orbs */}
+        <div className="orb animate-float-slow hidden sm:block" style={{ background: "#2FB5DB", width: 360, height: 360, top: -80, left: -60 }} aria-hidden="true" />
+        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#F5B642", width: 280, height: 280, bottom: -60, right: 40, opacity: 0.35 }} aria-hidden="true" />
+        {/* Dotted grid overlay */}
+        <div className="absolute inset-0 dot-grid-light opacity-40 pointer-events-none" aria-hidden="true" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left: Headline + Call CTA */}
-            <div>
-              <span className="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 glass-strong text-white text-xs sm:text-sm font-semibold pl-2 pr-4 py-1.5 rounded-full mb-7">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
                 CalAIM Community Supports Provider
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Free Housing, a Case Manager, and Move-In Funds Through Your Medi-Cal.
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-white leading-[1.08] mb-6">
+                Free Housing, a Case Manager, and{" "}
+                <span className="text-gradient-white">Move-In Funds</span>{" "}
+                Through Your <span className="whitespace-nowrap">Medi-Cal</span>.
               </h1>
-              <p className="text-white/85 text-lg leading-relaxed mb-8">
+              <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
                 For Medi-Cal members facing homelessness or housing instability. A dedicated case manager is assigned to you, every service is free, and the application takes five minutes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="tel:8885822282"
-                  className="flex items-center justify-center gap-3 bg-white text-[#23779B] font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
+                  className="group inline-flex items-center justify-center gap-3 bg-white text-[#23779B] font-bold px-8 py-4 rounded-full text-base sm:text-lg shadow-[0_18px_45px_-12px_rgba(0,0,0,0.35)] hover:shadow-[0_22px_55px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-all whitespace-nowrap"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                  </svg>
+                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#23779B]/10">
+                    <span className="absolute inset-0 rounded-full bg-[#23779B]/20 pulse-ring"></span>
+                    <svg className="w-4 h-4 text-[#23779B]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                  </span>
                   (888) 582-2282
                 </a>
                 <Link
                   href="/apply-now"
-                  className="flex items-center justify-center bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-colors whitespace-nowrap"
+                  className="group inline-flex items-center justify-center gap-2 glass-strong text-white font-bold px-8 py-4 rounded-full text-base sm:text-lg hover:bg-white/25 transition-all whitespace-nowrap"
                 >
                   Start My Free Application
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </Link>
               </div>
-              <p className="mt-4 text-white/55 text-xs tracking-wide">HIPAA Protected &nbsp;·&nbsp; No Cost to You &nbsp;·&nbsp; Response in 1–2 Business Days</p>
+              {/* Trust badges */}
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-white/70 text-xs sm:text-sm">
+                {[
+                  { icon: "🛡️", text: "HIPAA Protected" },
+                  { icon: "✓", text: "No Cost to You" },
+                  { icon: "⏱", text: "Reply in 1-2 Business Days" },
+                ].map((b) => (
+                  <span key={b.text} className="inline-flex items-center gap-2">
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 border border-white/15 text-xs">
+                      {b.icon}
+                    </span>
+                    {b.text}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* Right: Callback Form */}
-            <div id="callback-form" className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto mt-8 lg:mt-0 border-t border-white/20 pt-8 lg:border-0 lg:pt-0">
-              <CallbackForm />
+            <div id="callback-form" className="lg:col-span-5 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto mt-4 lg:mt-0 relative">
+              {/* Decorative halo behind form */}
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-[#2FB5DB]/40 via-transparent to-[#F5B642]/30 blur-2xl opacity-70 pointer-events-none" aria-hidden="true" />
+              <div className="relative">
+                <CallbackForm />
+              </div>
             </div>
           </div>
         </div>
         {/* Wave transition into metrics section */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="block w-full h-8 sm:h-10 md:h-14" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C320,0 640,60 960,20 C1120,0 1280,50 1440,30 L1440,60 L0,60 Z" fill="#F4F8FC" />
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="block w-full h-10 sm:h-14 md:h-20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,50 C240,10 480,80 720,40 C960,0 1200,70 1440,30 L1440,80 L0,80 Z" className="wave-fill-card" />
           </svg>
         </div>
       </section>
 
       {/* ── Key Metrics ── */}
-      <section className="py-16 bg-[#F4F8FC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Results Since 2023</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      <section className="relative py-20 bg-[#F4F8FC] overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[680px] h-[300px] bg-gradient-to-b from-[#23779B]/10 to-transparent blur-3xl pointer-events-none" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block bg-white text-[#23779B] text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4 border border-[#23779B]/15 shadow-sm">
+              By the Numbers
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E2828] mb-4">
+              Results <span className="text-gradient-brand">Since 2023</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               Most of these members had Medi-Cal for years before learning these services were included in their existing coverage.
             </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {metrics.map((m) => (
-              <div key={m.label} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center">
-                <AnimatedCounter value={m.value} className="text-4xl sm:text-5xl font-bold text-[#23779B] mb-2" />
-                <div className="text-sm text-gray-500 font-medium">{m.label}</div>
-              </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {metrics.map((m, i) => (
+              <ScrollReveal key={m.label} delay={i * 90}>
+                <div className="group relative bg-white rounded-2xl border border-gray-100 p-7 sm:p-8 text-center card-lift overflow-hidden h-full">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2FB5DB] via-[#23779B] to-[#1a5a75]" />
+                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-[#23779B]/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <AnimatedCounter value={m.value} className="block text-4xl sm:text-5xl font-bold text-gradient-brand mb-2" />
+                  <div className="text-sm text-gray-500 font-medium leading-snug">{m.label}</div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <a
               href="#callback-form"
-              className="inline-block bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+              className="inline-flex items-center gap-2 bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white font-bold px-8 py-3.5 rounded-full hover:-translate-y-0.5 transition-all shadow-[0_12px_30px_-10px_rgba(35,119,155,0.55)] hover:shadow-[0_16px_36px_-10px_rgba(35,119,155,0.7)]"
             >
               See If I Qualify, It&apos;s Free
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </a>
           </div>
         </div>
       </section>
 
       {/* ── Services ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">What&apos;s Covered</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      <section className="relative py-20 sm:py-24 bg-white overflow-hidden">
+        <div className="absolute top-20 -left-40 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-[#23779B]/7 to-transparent blur-3xl pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-20 -right-40 w-[480px] h-[480px] rounded-full bg-gradient-to-br from-[#F5B642]/10 to-transparent blur-3xl pointer-events-none" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block bg-[#23779B]/10 text-[#23779B] text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4">
+              Services
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E2828] mb-4">
+              What&apos;s <span className="text-gradient-brand">Covered</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               Six programs, one goal: get you into a stable home and keep you there.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
             {services.map((svc, i) => (
               <ScrollReveal key={svc.title} delay={i * 80}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full">
-                  <div className="bg-[#23779B] px-5 py-5 flex items-center gap-4">
-                    <div className="text-white/90 shrink-0">{svc.icon}</div>
-                    <h3 className="text-white font-bold text-base leading-snug flex items-center flex-wrap gap-2">
-                      <span>{svc.title}</span>
-                      {svc.comingSoon && (
-                        <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-normal">
-                          Coming Soon
-                        </span>
-                      )}
-                    </h3>
+                <div className="group relative bg-white rounded-3xl overflow-hidden border border-gray-100 card-lift h-full">
+                  {/* Gradient header block with icon */}
+                  <div className="relative h-28 bg-gradient-to-br from-[#23779B] via-[#1d6485] to-[#1a5a75] overflow-hidden">
+                    <div className="absolute inset-0 dot-grid-light opacity-60" aria-hidden="true" />
+                    <div className="absolute -top-10 -right-10 w-36 h-36 bg-[#2FB5DB]/30 rounded-full blur-2xl" aria-hidden="true" />
+                    {/* Large icon */}
+                    <div className="absolute left-6 bottom-[-28px]">
+                      <div className="w-[72px] h-[72px] rounded-2xl bg-white flex items-center justify-center text-[#23779B] shadow-xl shadow-[#23779B]/25 border border-[#23779B]/10 group-hover:scale-[1.04] transition-transform duration-300">
+                        {svc.icon}
+                      </div>
+                    </div>
+                    {svc.comingSoon && (
+                      <span className="absolute top-4 right-4 bg-[#F5B642] text-[#1E2828] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                        Coming Soon
+                      </span>
+                    )}
                   </div>
-                  <div className="p-5">
+                  <div className="px-6 pt-12 pb-7">
+                    <h3 className="text-[#1E2828] font-bold text-lg mb-2 group-hover:text-[#23779B] transition-colors">
+                      {svc.title}
+                    </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{svc.description}</p>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-14">
             <Link
               href="/apply-now"
-              className="inline-block bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+              className="inline-flex items-center gap-2 bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white font-bold px-8 py-3.5 rounded-full hover:-translate-y-0.5 transition-all shadow-[0_12px_30px_-10px_rgba(35,119,155,0.55)] hover:shadow-[0_16px_36px_-10px_rgba(35,119,155,0.7)]"
             >
               Apply for Free, See What You Qualify For
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </Link>
           </div>
         </div>
@@ -498,91 +568,111 @@ export default function HomePage() {
       {/* ── How It Works ── */}
       <style>{`
         @keyframes step-glow {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.1); background: rgba(255,255,255,0.18); }
-          50% { box-shadow: 0 0 28px 6px rgba(255,255,255,0.2); background: rgba(255,255,255,0.28); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.1); background: rgba(255,255,255,0.22); }
+          50% { box-shadow: 0 0 36px 8px rgba(255,255,255,0.25); background: rgba(255,255,255,0.32); }
         }
         .step-active { animation: step-glow 2.8s ease-in-out infinite; }
       `}</style>
-      <section className="py-16" style={{ background: "linear-gradient(135deg, #23779B 0%, #1a5a75 100%)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Five Steps to a Signed Lease</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
+      <section className="relative py-20 sm:py-24 overflow-hidden hero-mesh grain">
+        <div className="orb animate-float-slow hidden sm:block" style={{ background: "#2FB5DB", width: 280, height: 280, top: 40, right: -50, opacity: 0.4 }} aria-hidden="true" />
+        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#F5B642", width: 240, height: 240, bottom: 20, left: -40, opacity: 0.28 }} aria-hidden="true" />
+        <div className="absolute inset-0 dot-grid-light opacity-30 pointer-events-none" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block glass-strong text-white text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4">
+              How It Works
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Five Steps to a <span className="text-gradient-white">Signed Lease</span>
+            </h2>
+            <p className="text-white/80 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               From application to housed. Most applicants hear back within one to two business days.
             </p>
           </div>
 
-          {/* Progress track — desktop only */}
-          <div className="hidden lg:flex items-center justify-center mb-6">
-            {steps.map((s, i) => (
-              <div key={s.step} className="flex items-center">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${i === 0 ? "bg-white text-[#23779B] ring-4 ring-white/30" : "bg-white/20 text-white/60"}`}>
-                  {s.step}
-                </div>
-                {i < steps.length - 1 && (
-                  <div className={`h-0.5 w-20 ${i === 0 ? "bg-white/60" : "bg-white/20"}`} />
-                )}
-              </div>
-            ))}
+          {/* Dotted connector line on desktop */}
+          <div className="relative">
+            <div className="hidden lg:block absolute left-0 right-0 top-8 h-0.5" aria-hidden="true">
+              <div className="mx-auto max-w-[88%] h-full border-t-2 border-dashed border-white/25" />
+            </div>
+
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {steps.map((s, i) => {
+                const isFirst = i === 0;
+                const isLast = i === steps.length - 1;
+                const lastColClass = isLast ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : "";
+                const inner = (
+                  <>
+                    <div className="relative mx-auto mb-5 w-16 h-16">
+                      {isFirst && (
+                        <span className="absolute inset-0 rounded-full bg-white/40 pulse-ring" aria-hidden="true"></span>
+                      )}
+                      <div className={`relative w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto shadow-xl ${isFirst ? "bg-white text-[#23779B]" : "bg-white/15 text-white border border-white/25 backdrop-blur-sm"}`}>
+                        {s.step}
+                      </div>
+                    </div>
+                    {isFirst && (
+                      <span className="inline-block text-[#F5B642] text-[10px] font-bold uppercase tracking-[0.18em] mb-2">You Are Here</span>
+                    )}
+                    <h3 className="text-white font-bold mb-2 text-base">{s.title}</h3>
+                    <p className="text-white/75 text-sm leading-relaxed">{s.description}</p>
+                  </>
+                );
+                return isFirst ? (
+                  <a
+                    key={s.step}
+                    href="#callback-form"
+                    className={`step-active border border-white/30 rounded-2xl p-6 text-center block cursor-pointer transition-transform hover:-translate-y-1${lastColClass}`}
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div
+                    key={s.step}
+                    className={`glass rounded-2xl p-6 text-center hover:bg-white/15 transition-colors${lastColClass}`}
+                  >
+                    {inner}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {steps.map((s, i) => {
-              const isFirst = i === 0;
-              const isLast = i === steps.length - 1;
-              const lastColClass = isLast ? " sm:col-start-1 sm:col-span-2 md:col-start-2 md:col-span-1 lg:col-start-auto lg:col-span-1" : "";
-              const inner = (
-                <>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ${isFirst ? "bg-white text-[#23779B]" : "bg-white/20 text-white"}`}>
-                    {s.step}
-                  </div>
-                  {isFirst && (
-                    <span className="inline-block text-white/60 text-xs font-semibold uppercase tracking-widest mb-2">You Are Here</span>
-                  )}
-                  <h3 className="text-white font-bold mb-2">{s.title}</h3>
-                  <p className="text-white/75 text-sm leading-relaxed">{s.description}</p>
-                </>
-              );
-              return isFirst ? (
-                <a
-                  key={s.step}
-                  href="#callback-form"
-                  className={`step-active border border-white/30 rounded-2xl p-6 text-center block cursor-pointer${lastColClass}`}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div
-                  key={s.step}
-                  className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center${lastColClass}`}
-                >
-                  {inner}
-                </div>
-              );
-            })}
-          </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <a
               href="#callback-form"
-              className="inline-block bg-white text-[#23779B] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 bg-white text-[#23779B] font-bold px-10 py-4 rounded-full text-base sm:text-lg shadow-[0_18px_45px_-12px_rgba(0,0,0,0.35)] hover:shadow-[0_22px_55px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-all"
             >
               Check If I Qualify, It&apos;s Free
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
             </a>
           </div>
         </div>
       </section>
 
       {/* ── Why CCC ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="inline-block bg-[#23779B]/10 text-[#23779B] text-sm font-semibold px-4 py-1 rounded-full mb-4">Why California Care Coordinators</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-4">A Person, Not a Packet</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Most housing programs hand you a waiting list. CCC assigns you a case manager who works on your behalf until you have a signed lease.</p>
+      <section className="relative py-20 sm:py-24 bg-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-gradient-to-br from-[#2FB5DB]/8 to-transparent blur-3xl pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-20 left-0 w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-[#F5B642]/10 to-transparent blur-3xl pointer-events-none" aria-hidden="true" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-[#23779B]/10 text-[#23779B] text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4">
+              Why California Care Coordinators
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E2828] mb-4">
+              A Person, <span className="text-gradient-brand">Not a Packet</span>
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
+              Most housing programs hand you a waiting list. CCC assigns you a case manager who works on your behalf until you have a signed lease.
+            </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left: differentiators */}
-            <div className="space-y-6">
+            <div className="lg:col-span-7 space-y-4">
               {[
                 {
                   title: "One person handles everything",
@@ -621,24 +711,31 @@ export default function HomePage() {
                   ),
                 },
               ].map((item, i) => (
-                <ScrollReveal key={item.title} delay={i * 100}>
-                  <div className="flex gap-4 items-start">
-                    <div className="w-11 h-11 rounded-xl bg-[#23779B]/10 text-[#23779B] flex items-center justify-center shrink-0 mt-0.5">
+                <ScrollReveal key={item.title} delay={i * 90}>
+                  <div className="group relative flex gap-5 items-start bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 card-lift">
+                    <div className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full bg-gradient-to-b from-[#2FB5DB] to-[#23779B] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                    <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white flex items-center justify-center shrink-0 shadow-lg shadow-[#23779B]/25">
                       {item.icon}
+                      <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#F5B642] text-[#1E2828] text-[10px] font-bold flex items-center justify-center shadow">
+                        {i + 1}
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-[#1E2828] mb-1">{item.title}</h3>
+                    <div className="pt-1">
+                      <h3 className="font-bold text-[#1E2828] mb-1 text-base sm:text-lg">{item.title}</h3>
                       <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
                     </div>
                   </div>
                 </ScrollReveal>
               ))}
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <a
                   href="#callback-form"
-                  className="inline-flex items-center justify-center bg-[#23779B] text-white font-bold px-7 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white font-bold px-7 py-3.5 rounded-full hover:-translate-y-0.5 transition-all shadow-[0_12px_30px_-10px_rgba(35,119,155,0.55)] hover:shadow-[0_16px_36px_-10px_rgba(35,119,155,0.7)]"
                 >
                   Check If I Qualify
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </a>
                 <a
                   href="tel:8885822282"
@@ -650,17 +747,27 @@ export default function HomePage() {
               </div>
             </div>
             {/* Right: stats */}
-            <div className="grid grid-cols-2 gap-5">
+            <div className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-5 lg:sticky lg:top-24">
               {[
-                { value: "3,000+", label: "Active Members Served", color: "bg-[#23779B]" },
-                { value: "600+", label: "Members Successfully Housed", color: "bg-[#1E2828]" },
-                { value: "$1.7M+", label: "Voucher Funds Deployed", color: "bg-[#1E2828]" },
-                { value: "60+", label: "Case Managers on Staff", color: "bg-[#23779B]" },
-              ].map((stat) => (
-                <div key={stat.label} className={`${stat.color} text-white rounded-2xl p-7 flex flex-col justify-between`}>
-                  <AnimatedCounter value={stat.value} className="text-4xl sm:text-5xl font-bold mb-3" />
-                  <div className="text-white/70 text-sm font-medium leading-snug">{stat.label}</div>
-                </div>
+                { value: "3,000+", label: "Active Members Served", variant: "primary" },
+                { value: "600+", label: "Successfully Housed", variant: "dark" },
+                { value: "$1.7M+", label: "Voucher Funds Deployed", variant: "dark" },
+                { value: "60+", label: "Case Managers on Staff", variant: "primary" },
+              ].map((stat, i) => (
+                <ScrollReveal key={stat.label} delay={i * 90}>
+                  <div
+                    className={`relative overflow-hidden rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[170px] card-lift ${
+                      stat.variant === "primary"
+                        ? "bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white"
+                        : "bg-gradient-to-br from-[#1E2828] to-[#0e1414] text-white"
+                    }`}
+                  >
+                    <div className="absolute inset-0 dot-grid-light opacity-40 pointer-events-none" aria-hidden="true" />
+                    <div className={`absolute -top-8 -right-8 w-28 h-28 rounded-full blur-2xl pointer-events-none ${stat.variant === "primary" ? "bg-[#2FB5DB]/40" : "bg-[#23779B]/30"}`} aria-hidden="true" />
+                    <AnimatedCounter value={stat.value} className="relative text-4xl sm:text-5xl font-bold mb-2" />
+                    <div className="relative text-white/75 text-xs sm:text-sm font-medium leading-snug uppercase tracking-wide">{stat.label}</div>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -668,82 +775,135 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 bg-[#F4F8FC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">Common Questions</h2>
-            <p className="text-gray-600">Questions most people ask before they apply, answered plainly.</p>
+      <section className="relative py-20 sm:py-24 bg-[#F4F8FC] overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[560px] h-[260px] bg-gradient-to-b from-[#23779B]/10 to-transparent blur-3xl pointer-events-none" aria-hidden="true" />
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block bg-white text-[#23779B] text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4 border border-[#23779B]/15 shadow-sm">
+              FAQ
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E2828] mb-4">
+              Common <span className="text-gradient-brand">Questions</span>
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg">Questions most people ask before they apply, answered plainly.</p>
           </div>
           <FAQAccordion faqs={faqs} />
-          <div className="mt-12 border-t border-gray-200 pt-10 text-center">
-            <p className="text-[#1E2828] font-bold text-lg mb-2">Still have questions? Talk to someone.</p>
-            <p className="text-gray-500 text-sm mb-6">A CCC team member can walk you through your options before you apply.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="#callback-form"
-                className="bg-[#23779B] text-white font-bold px-8 py-3.5 rounded-full hover:bg-[#1d6485] transition-colors shadow-md"
-              >
-                Request a Callback
-              </a>
-              <Link
-                href="/apply-now"
-                className="border-2 border-[#23779B] text-[#23779B] font-bold px-8 py-3.5 rounded-full hover:bg-[#23779B]/5 transition-colors"
-              >
-                Apply Online Now
-              </Link>
+          <div className="mt-14 relative rounded-3xl bg-white border border-gray-100 p-8 sm:p-10 text-center shadow-sm overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-gradient-to-br from-[#2FB5DB]/15 to-transparent blur-2xl" aria-hidden="true" />
+            <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-gradient-to-tr from-[#F5B642]/15 to-transparent blur-2xl" aria-hidden="true" />
+            <div className="relative">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white mb-4 shadow-lg shadow-[#23779B]/25">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z" />
+                </svg>
+              </div>
+              <p className="text-[#1E2828] font-bold text-xl mb-2">Still have questions? Talk to someone.</p>
+              <p className="text-gray-500 text-sm mb-6 max-w-lg mx-auto">A CCC team member can walk you through your options before you apply.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                  href="#callback-form"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-br from-[#23779B] to-[#1a5a75] text-white font-bold px-8 py-3.5 rounded-full hover:-translate-y-0.5 transition-all shadow-[0_12px_30px_-10px_rgba(35,119,155,0.55)] hover:shadow-[0_16px_36px_-10px_rgba(35,119,155,0.7)]"
+                >
+                  Request a Callback
+                </a>
+                <Link
+                  href="/apply-now"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-[#23779B] text-[#23779B] font-bold px-8 py-3.5 rounded-full hover:bg-[#23779B]/5 transition-colors"
+                >
+                  Apply Online Now
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Partners ── */}
-      <section className="py-16 bg-white">
+      <section className="relative py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-[#1E2828] mb-3">Trusted by HUD, CalAIM, and Regional Housing Authorities</h2>
-            <p className="text-gray-600">The vouchers, the funding, and the regional relationships that get members housed run through these organizations.</p>
+          <div className="text-center mb-12">
+            <span className="inline-block bg-[#23779B]/10 text-[#23779B] text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4">
+              Partners & Funding
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1E2828] mb-3">
+              Trusted by HUD, CalAIM, and Regional{" "}
+              <span className="text-gradient-brand">Housing Authorities</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              The vouchers, the funding, and the regional relationships that get members housed run through these organizations.
+            </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {partners.map((p) => (
-              <div key={p.alt} className="flex items-center justify-center p-4">
-                <Image
-                  src={p.image}
-                  alt={p.alt}
-                  width={140}
-                  height={70}
-                  className="h-14 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-                />
-              </div>
-            ))}
+          {/* Marquee */}
+          <div className="relative overflow-hidden py-6">
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-14 animate-marquee w-max">
+              {[...partners, ...partners].map((p, idx) => (
+                <div key={`${p.alt}-${idx}`} className="flex items-center justify-center px-4 shrink-0" aria-hidden={idx >= partners.length ? "true" : undefined}>
+                  <Image
+                    src={p.image}
+                    alt={idx >= partners.length ? "" : p.alt}
+                    width={160}
+                    height={80}
+                    className="h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Bottom CTA ── */}
-      <section className="py-16 bg-[#1E2828]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            The Application Takes Five Minutes
-          </h2>
-          <p className="text-white/80 text-lg mb-8 leading-relaxed">
-            A case manager does the rest. If you have Medi-Cal and are facing housing instability, there is a good chance you already qualify. It costs you nothing to find out.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/apply-now"
-              className="bg-[#23779B] text-white font-bold px-10 py-4 rounded-full text-lg hover:bg-[#1a5a75] transition-colors shadow-lg"
-            >
-              Apply Free in 5 Minutes
-            </Link>
-            <a
-              href="tel:8885822282"
-              className="flex items-center justify-center gap-2 bg-white text-[#1E2828] font-bold px-10 py-4 rounded-full text-lg hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-              </svg>
-              (888) 582-2282
-            </a>
+      <section className="relative py-20 sm:py-24 overflow-hidden bg-[#0e1414]">
+        <div className="absolute inset-0 hero-mesh opacity-80" aria-hidden="true" />
+        <div className="absolute inset-0 grain" aria-hidden="true" />
+        <div className="orb animate-float-slow hidden sm:block" style={{ background: "#2FB5DB", width: 340, height: 340, top: -60, left: -40, opacity: 0.4 }} aria-hidden="true" />
+        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#F5B642", width: 280, height: 280, bottom: -40, right: -40, opacity: 0.3 }} aria-hidden="true" />
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative glass-strong rounded-3xl p-10 sm:p-14 text-center overflow-hidden">
+            <div className="absolute inset-0 dot-grid-light opacity-30 pointer-events-none" aria-hidden="true" />
+            <div className="relative">
+              <span className="inline-block glass text-white text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-5">
+                Ready in Five Minutes
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
+                The Application Takes{" "}
+                <span className="text-gradient-white">Five Minutes.</span>
+              </h2>
+              <p className="text-white/85 text-base sm:text-lg mb-9 leading-relaxed max-w-2xl mx-auto">
+                A case manager does the rest. If you have Medi-Cal and are facing housing instability, there is a good chance you already qualify. It costs you nothing to find out.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/apply-now"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-[#23779B] font-bold px-10 py-4 rounded-full text-base sm:text-lg shadow-[0_18px_45px_-12px_rgba(0,0,0,0.5)] hover:shadow-[0_22px_55px_-10px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all"
+                >
+                  Apply Free in 5 Minutes
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+                <a
+                  href="tel:8885822282"
+                  className="inline-flex items-center justify-center gap-3 glass-strong text-white font-bold px-10 py-4 rounded-full text-base sm:text-lg hover:bg-white/25 transition-all"
+                >
+                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/15">
+                    <span className="absolute inset-0 rounded-full bg-white/20 pulse-ring"></span>
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                  </span>
+                  (888) 582-2282
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

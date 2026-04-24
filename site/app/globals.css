@@ -3,36 +3,196 @@
 
 :root {
   --brand-teal: #23779B;
+  --brand-teal-dark: #1a5a75;
+  --brand-teal-deep: #134156;
   --brand-dark: #1E2828;
   --brand-card: #F4F8FC;
+  --brand-accent: #2FB5DB;
+  --brand-gold: #F5B642;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Ubuntu', system-ui, sans-serif;
   color: #1E2828;
   background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Ubuntu', system-ui, sans-serif;
+  letter-spacing: -0.015em;
 }
 
-@keyframes hero-shimmer {
-  0% { background-position: 0% 50%; }
+h1, h2 { letter-spacing: -0.025em; }
+
+/* ── Gradient Text ── */
+.text-gradient-brand {
+  background: linear-gradient(120deg, #23779B 0%, #2FB5DB 60%, #23779B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: text-shimmer 6s ease-in-out infinite;
+}
+
+.text-gradient-white {
+  background: linear-gradient(120deg, #ffffff 0%, #d5e9f3 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: text-shimmer 7s ease-in-out infinite;
+}
+
+/* ── Hero mesh gradient and grain ── */
+.hero-mesh {
+  background:
+    radial-gradient(1000px 600px at 12% 18%, rgba(47, 181, 219, 0.45) 0%, transparent 60%),
+    radial-gradient(900px 700px at 92% 88%, rgba(245, 182, 66, 0.18) 0%, transparent 60%),
+    radial-gradient(800px 500px at 80% 15%, rgba(35, 119, 155, 0.55) 0%, transparent 60%),
+    linear-gradient(135deg, #0f3a4e 0%, #1a5a75 45%, #23779B 80%, #1E2828 120%);
+  background-size: 140% 140%, 140% 140%, 140% 140%, 100% 100%;
+  animation: mesh-drift 22s ease-in-out infinite;
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ── Floating orbs ── */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ── Animations ── */
+@keyframes mesh-drift {
+  0%, 100% { background-position: 0% 0%, 100% 100%, 0% 100%, 0 0; }
+  50% { background-position: 30% 40%, 70% 60%, 40% 20%, 0 0; }
+}
+
+@keyframes text-shimmer {
+  0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
-.hero-gradient {
-  background: linear-gradient(-45deg, #23779B, #1a5a75, #1E2828, #1d5e7a, #23779B);
-  background-size: 400% 400%;
-  animation: hero-shimmer 15s ease infinite;
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -18px) scale(1.04); }
+  66% { transform: translate(-16px, 22px) scale(0.97); }
 }
+
+@keyframes float-slow-alt {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-22px, 16px) scale(1.05); }
+  66% { transform: translate(18px, -24px) scale(0.96); }
+}
+
+.animate-float-slow { animation: float-slow 18s ease-in-out infinite; }
+.animate-float-slow-alt { animation: float-slow-alt 22s ease-in-out infinite; }
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  80% { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.pulse-ring { animation: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 38s linear infinite; }
+
+@keyframes gradient-border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── Glass morphism ── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ── Soft shadow lift card ── */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px -22px rgba(35, 119, 155, 0.35), 0 6px 18px -12px rgba(30, 40, 40, 0.12);
+}
+
+/* ── Gradient ring button ── */
+.btn-gradient-ring {
+  position: relative;
+  isolation: isolate;
+}
+.btn-gradient-ring::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #2FB5DB, #23779B, #F5B642, #23779B, #2FB5DB);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.btn-gradient-ring:hover::before { opacity: 1; }
+
+/* ── Subtle dotted grid background ── */
+.dot-grid {
+  background-image: radial-gradient(rgba(35, 119, 155, 0.15) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.dot-grid-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ── Section divider wave color utility ── */
+.wave-fill-card { fill: #F4F8FC; }
+.wave-fill-white { fill: #ffffff; }
+.wave-fill-dark { fill: #1E2828; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-gradient {
-    animation: none;
-    background: linear-gradient(135deg, #23779B 0%, #1a5a75 60%, #1E2828 100%);
-    background-size: 100% 100%;
+  .hero-mesh,
+  .animate-float-slow,
+  .animate-float-slow-alt,
+  .animate-marquee,
+  .text-gradient-brand,
+  .text-gradient-white,
+  .pulse-ring {
+    animation: none !important;
   }
 }
