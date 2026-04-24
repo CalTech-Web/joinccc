@@ -379,9 +379,49 @@ export default function HomePage() {
       <section className="hero-mesh grain relative overflow-hidden flex items-center min-h-[680px]">
         {/* Floating orbs */}
         <div className="orb animate-float-slow hidden sm:block" style={{ background: "#2FB5DB", width: 360, height: 360, top: -80, left: -60 }} aria-hidden="true" />
-        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#F5B642", width: 280, height: 280, bottom: -60, right: 40, opacity: 0.35 }} aria-hidden="true" />
-        {/* Dotted grid overlay */}
-        <div className="absolute inset-0 dot-grid-light opacity-40 pointer-events-none" aria-hidden="true" />
+        <div className="orb animate-float-slow-alt hidden sm:block" style={{ background: "#6FC8DF", width: 280, height: 280, bottom: -60, right: 40, opacity: 0.28 }} aria-hidden="true" />
+        {/* Watermark pattern: scattered tiny houses, keys, doors */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern id="hero-watermark" width="220" height="220" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)">
+              <g fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                {/* House */}
+                <g transform="translate(22 40)">
+                  <path d="M0 12 L12 0 L24 12 L24 24 L0 24 Z" />
+                  <path d="M9 24 L9 16 L15 16 L15 24" />
+                </g>
+                {/* Key */}
+                <g transform="translate(140 28) rotate(25)">
+                  <circle cx="6" cy="6" r="5" />
+                  <path d="M11 6 L28 6 M24 6 L24 11 M20 6 L20 10" />
+                </g>
+                {/* Door */}
+                <g transform="translate(38 150)">
+                  <path d="M0 20 L0 2 L14 2 L14 20" />
+                  <circle cx="11" cy="12" r="0.9" fill="#ffffff" stroke="none" />
+                </g>
+                {/* Small house */}
+                <g transform="translate(160 140) rotate(8)">
+                  <path d="M0 10 L10 0 L20 10 L20 20 L0 20 Z" />
+                  <path d="M7 20 L7 14 L13 14 L13 20" />
+                </g>
+                {/* Small key */}
+                <g transform="translate(100 110) rotate(-15)">
+                  <circle cx="5" cy="5" r="4" />
+                  <path d="M9 5 L22 5 M19 5 L19 9 M16 5 L16 8" />
+                </g>
+                {/* Tiny house silhouette */}
+                <g transform="translate(180 80) rotate(-10)">
+                  <path d="M0 8 L8 0 L16 8 L16 16 L0 16 Z" />
+                </g>
+              </g>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-watermark)" />
+        </svg>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
