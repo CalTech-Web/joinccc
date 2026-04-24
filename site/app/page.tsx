@@ -630,10 +630,54 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Dotted connector line on desktop */}
+          {/* Winding journey trail connecting steps 1 through 5 (desktop) */}
           <div className="relative">
-            <div className="hidden lg:block absolute left-0 right-0 top-8 h-0.5" aria-hidden="true">
-              <div className="mx-auto max-w-[88%] h-full border-t-2 border-dashed border-white/25" />
+            <div className="hidden lg:block absolute inset-x-0 top-12 h-20 pointer-events-none" aria-hidden="true">
+              <svg viewBox="0 0 1280 120" preserveAspectRatio="none" className="w-full h-full overflow-visible">
+                <defs>
+                  <linearGradient id="trail-grad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#A9DBE8" stopOpacity="0.25" />
+                    <stop offset="50%" stopColor="#ffffff" stopOpacity="0.55" />
+                    <stop offset="100%" stopColor="#A9DBE8" stopOpacity="0.25" />
+                  </linearGradient>
+                </defs>
+                {/* Faint underlay for depth */}
+                <path
+                  d="M0,60 C30,30 90,30 120,60 C150,90 354,90 384,60 C414,30 618,30 648,60 C678,90 882,90 912,60 C942,30 1146,30 1176,60 C1200,75 1260,50 1280,60"
+                  fill="none"
+                  stroke="#ffffff"
+                  strokeOpacity="0.10"
+                  strokeWidth="8"
+                  strokeLinecap="round"
+                />
+                {/* Main dashed trail */}
+                <path
+                  d="M0,60 C30,30 90,30 120,60 C150,90 354,90 384,60 C414,30 618,30 648,60 C678,90 882,90 912,60 C942,30 1146,30 1176,60 C1200,75 1260,50 1280,60"
+                  fill="none"
+                  stroke="url(#trail-grad)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeDasharray="2 8"
+                />
+                {/* Route waypoint dots along the bumps */}
+                <g fill="#ffffff" fillOpacity="0.55">
+                  <circle cx="60" cy="38" r="1.8" />
+                  <circle cx="252" cy="82" r="1.8" />
+                  <circle cx="516" cy="38" r="1.8" />
+                  <circle cx="780" cy="82" r="1.8" />
+                  <circle cx="1044" cy="38" r="1.8" />
+                  <circle cx="1220" cy="68" r="1.8" />
+                </g>
+                {/* Start pin at the beginning of the trail */}
+                <g transform="translate(4, 46)" opacity="0.85">
+                  <path d="M8 0 C3.6 0 0 3.6 0 8 c0 6 8 16 8 16 s8-10 8-16 C16 3.6 12.4 0 8 0 Z" fill="#ffffff" fillOpacity="0.22" />
+                  <circle cx="8" cy="8" r="3" fill="#ffffff" fillOpacity="0.85" />
+                </g>
+                {/* House icon at the end of the trail */}
+                <g transform="translate(1252, 46)" opacity="0.85">
+                  <path d="M2,12 L12,2 L22,12 L22,22 L2,22 Z M9,22 L9,15 L15,15 L15,22" fill="none" stroke="#ffffff" strokeOpacity="0.75" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" />
+                </g>
+              </svg>
             </div>
 
             <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -652,7 +696,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     {isFirst && (
-                      <span className="inline-block text-[#F5B642] text-[10px] font-bold uppercase tracking-[0.18em] mb-2">You Are Here</span>
+                      <span className="inline-block text-[#A9DBE8] text-[10px] font-bold uppercase tracking-[0.18em] mb-2">You Are Here</span>
                     )}
                     <h3 className="text-white font-bold mb-2 text-base">{s.title}</h3>
                     <p className="text-white/75 text-sm leading-relaxed">{s.description}</p>
