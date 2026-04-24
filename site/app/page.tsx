@@ -948,7 +948,7 @@ export default function HomePage() {
         <div className="absolute inset-0 grain" aria-hidden="true" />
         {/* Topographic contour map layer */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.18] pointer-events-none"
+          className="absolute inset-0 w-full h-full opacity-[0.08] pointer-events-none"
           viewBox="0 0 1440 600"
           preserveAspectRatio="xMidYMid slice"
           aria-hidden="true"
@@ -985,7 +985,7 @@ export default function HomePage() {
         </svg>
         {/* Street-map grid layer */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.08] pointer-events-none"
+          className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none"
           viewBox="0 0 1440 600"
           preserveAspectRatio="xMidYMid slice"
           aria-hidden="true"
