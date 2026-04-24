@@ -521,27 +521,25 @@ export default function HomePage() {
               Six programs, one goal: get you into a stable home and keep you there.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
             {services.map((svc, i) => (
-              <ScrollReveal key={svc.title} delay={i * 80}>
-                <div className="group relative bg-white rounded-3xl overflow-hidden border border-gray-100 card-lift h-full">
-                  {/* Gradient header block with icon */}
-                  <div className="relative h-28 bg-gradient-to-br from-[#23779B] via-[#1d6485] to-[#1a5a75] overflow-hidden">
+              <ScrollReveal key={svc.title} delay={i * 80} className="h-full">
+                <div className="group relative bg-white rounded-3xl border border-gray-100 card-lift h-full flex flex-col overflow-hidden">
+                  {/* Thin decorative teal strip */}
+                  <div className="relative h-20 bg-gradient-to-br from-[#23779B] via-[#1d6485] to-[#1a5a75] shrink-0 overflow-hidden">
                     <div className="absolute inset-0 dot-grid-light opacity-60" aria-hidden="true" />
-                    <div className="absolute -top-10 -right-10 w-36 h-36 bg-[#2FB5DB]/30 rounded-full blur-2xl" aria-hidden="true" />
-                    {/* Large icon */}
-                    <div className="absolute left-6 bottom-[-28px]">
-                      <div className="w-[72px] h-[72px] rounded-2xl bg-white flex items-center justify-center text-[#23779B] shadow-xl shadow-[#23779B]/25 border border-[#23779B]/10 group-hover:scale-[1.04] transition-transform duration-300">
-                        {svc.icon}
-                      </div>
-                    </div>
+                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#2FB5DB]/30 rounded-full blur-2xl" aria-hidden="true" />
                     {svc.comingSoon && (
-                      <span className="absolute top-4 right-4 bg-[#F5B642] text-[#1E2828] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                      <span className="absolute top-1/2 -translate-y-1/2 right-6 bg-white text-[#23779B] text-[10px] font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-full shadow-sm">
                         Coming Soon
                       </span>
                     )}
                   </div>
-                  <div className="px-6 pt-12 pb-7">
+                  {/* Body with overlapping icon badge anchored to the boundary */}
+                  <div className="relative flex-1 flex flex-col px-6 pt-14 pb-7">
+                    <div className="absolute left-6 -top-8 w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-[#23779B] shadow-lg shadow-[#23779B]/20 ring-1 ring-[#23779B]/10 group-hover:scale-[1.04] transition-transform duration-300">
+                      {svc.icon}
+                    </div>
                     <h3 className="text-[#1E2828] font-bold text-lg mb-2 group-hover:text-[#23779B] transition-colors">
                       {svc.title}
                     </h3>
