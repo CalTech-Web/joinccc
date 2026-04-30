@@ -6,13 +6,13 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://joinccc.org"),
+  metadataBase: new URL("https://www.joinccc.org"),
   title: {
     default: "California Care Coordinators | CalAIM Housing & Care Support",
     template: "%s | California Care Coordinators",
   },
   description:
-    "California Care Coordinators provides qualifying Medi-Cal recipients with Enhanced Care Management and Community Supports under CalAIM. Housing navigation, deposit vouchers, and cash assistance in Southern California.",
+    "Free CalAIM housing support for qualifying Medi-Cal members in Southern California. Housing navigation, up to $5,000 in move-in funds, and care management.",
   keywords:
     "CalAIM, Community Supports, Medi-Cal, housing navigation, Enhanced Care Management, California Care Coordinators, CalOptima, IEHP, housing deposit voucher, tenancy sustaining, cash assistance vouchers, Santa Ana CA, CalAIM housing support Southern California, free housing assistance Medi-Cal, homeless services Orange County, CalAIM provider Orange County, Medi-Cal housing assistance, housing deposit voucher California, move-in funds Medi-Cal, housing instability support, case manager Medi-Cal, CalAIM community supports provider",
   alternates: {
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://joinccc.org",
+    url: "https://www.joinccc.org",
     siteName: "California Care Coordinators",
     title: "California Care Coordinators | CalAIM Housing & Care Support",
     description:
-      "Free housing navigation, up to $5,000 in move-in funds, and monthly cash assistance for qualifying Medi-Cal members in Southern California. Apply online in five minutes.",
+      "Free housing navigation, up to $5,000 in move-in funds, and monthly cash assistance for Medi-Cal members. Apply online in five minutes.",
     images: [
       {
         url: "/logos/ccc-logo-blue-fullres.png",

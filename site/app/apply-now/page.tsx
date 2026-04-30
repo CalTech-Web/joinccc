@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import ApplicationForm from "@/components/ApplicationForm";
 
 export const metadata: Metadata = {
-  title: "Apply Now",
+  title: "Apply for Free CalAIM Housing Support",
   description:
-    "Apply for free CalAIM housing support in Southern California. Qualifying Medi-Cal members can receive housing navigation, up to $5,000 in move-in funds, and Enhanced Care Management at no cost.",
+    "Apply online in five minutes for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for Medi-Cal members.",
   alternates: {
     canonical: "/apply-now",
   },
   openGraph: {
     type: "website",
-    url: "https://joinccc.org/apply-now",
-    title: "Apply Now | California Care Coordinators",
+    url: "https://www.joinccc.org/apply-now",
+    title: "Apply for Free CalAIM Housing Support | California Care Coordinators",
     description:
-      "Apply online for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for qualifying Medi-Cal members in Southern California.",
+      "Apply online in five minutes for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for Medi-Cal members.",
     images: [
       {
         url: "/logos/ccc-logo-blue-fullres.png",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Apply Now | California Care Coordinators",
+    title: "Apply for Free CalAIM Housing Support | California Care Coordinators",
     description:
-      "Apply online for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for qualifying Medi-Cal members.",
+      "Apply online in five minutes for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for Medi-Cal members.",
     images: ["/logos/ccc-logo-blue-fullres.png"],
   },
 };
@@ -34,33 +34,33 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joinccc.org" },
-    { "@type": "ListItem", "position": 2, "name": "Apply Now", "item": "https://joinccc.org/apply-now" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joinccc.org" },
+    { "@type": "ListItem", "position": 2, "name": "Apply Now", "item": "https://www.joinccc.org/apply-now" },
   ],
 };
 
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://joinccc.org/apply-now#webpage",
+  "@id": "https://www.joinccc.org/apply-now#webpage",
   "name": "Apply for CalAIM Housing Support | California Care Coordinators",
-  "url": "https://joinccc.org/apply-now",
+  "url": "https://www.joinccc.org/apply-now",
   "datePublished": "2023-01-01",
   "dateModified": "2026-04-22",
-  "description": "Apply online for free CalAIM housing support in Southern California. Qualifying Medi-Cal members receive housing navigation, up to $5,000 in move-in funds, and Enhanced Care Management at no cost.",
+  "description": "Apply online in five minutes for free CalAIM housing support, up to $5,000 in move-in funds, and Enhanced Care Management for Medi-Cal members in Southern California.",
   "inLanguage": "en-US",
-  "isPartOf": { "@type": "WebSite", "@id": "https://joinccc.org/#website" },
-  "publisher": { "@type": "Organization", "@id": "https://joinccc.org/#organization" },
+  "isPartOf": { "@type": "WebSite", "@id": "https://www.joinccc.org/#website" },
+  "publisher": { "@type": "Organization", "@id": "https://www.joinccc.org/#organization" },
   "about": {
     "@type": "Service",
     "name": "CalAIM Community Supports",
-    "provider": { "@type": "Organization", "@id": "https://joinccc.org/#organization" },
+    "provider": { "@type": "Organization", "@id": "https://www.joinccc.org/#organization" },
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joinccc.org" },
-      { "@type": "ListItem", "position": 2, "name": "Apply Now", "item": "https://joinccc.org/apply-now" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joinccc.org" },
+      { "@type": "ListItem", "position": 2, "name": "Apply Now", "item": "https://www.joinccc.org/apply-now" },
     ],
   },
   "speakable": {
@@ -70,11 +70,11 @@ const webPageSchema = {
   "potentialAction": {
     "@type": "ApplyAction",
     "name": "Apply for CalAIM Housing Support",
-    "target": "https://joinccc.org/apply-now",
+    "target": "https://www.joinccc.org/apply-now",
     "object": {
       "@type": "Service",
       "name": "CalAIM Community Supports",
-      "provider": { "@type": "Organization", "@id": "https://joinccc.org/#organization" },
+      "provider": { "@type": "Organization", "@id": "https://www.joinccc.org/#organization" },
     },
   },
 };

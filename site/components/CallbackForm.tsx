@@ -15,7 +15,7 @@ export default function CallbackForm() {
     setStatus("sending");
     try {
       const turnstileToken =
-        (document.querySelector('#callback-form [name="cf-turnstile-response"]') as HTMLInputElement | null)?.value || "";
+        (document.querySelector('#callback-form-el [name="cf-turnstile-response"]') as HTMLInputElement | null)?.value || "";
       const res = await fetch("https://forms.caltechweb.com/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -71,7 +71,7 @@ export default function CallbackForm() {
         </div>
         <h3 className="relative text-white font-bold text-2xl">See If You Qualify</h3>
       </div>
-      <form id="callback-form" onSubmit={handleSubmit} className="p-6 space-y-4">
+      <form id="callback-form-el" onSubmit={handleSubmit} className="p-6 space-y-4">
         <div>
           <label htmlFor="callback-name" className="block text-[#1E2828] text-sm mb-1 font-semibold">
             Your Name

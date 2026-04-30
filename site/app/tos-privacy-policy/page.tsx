@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://joinccc.org/tos-privacy-policy",
+    url: "https://www.joinccc.org/tos-privacy-policy",
     title: "Terms of Service & Privacy Policy | California Care Coordinators",
     description:
       "Read the Terms of Service and Privacy Policy for California Care Coordinators. Learn how we protect your personal information under HIPAA and CCPA.",
@@ -38,8 +38,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joinccc.org" },
-    { "@type": "ListItem", "position": 2, "name": "Terms of Service & Privacy Policy", "item": "https://joinccc.org/tos-privacy-policy" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.joinccc.org" },
+    { "@type": "ListItem", "position": 2, "name": "Terms of Service & Privacy Policy", "item": "https://www.joinccc.org/tos-privacy-policy" },
   ],
 };
 

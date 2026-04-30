@@ -132,12 +132,12 @@ const faqs = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness", "SocialService"],
-  "@id": "https://joinccc.org/#organization",
+  "@id": "https://www.joinccc.org/#organization",
   "name": "California Care Coordinators",
   "alternateName": "CCC",
-  "url": "https://joinccc.org",
-  "logo": "https://joinccc.org/logos/ccc-logo-blue-fullres.png",
-  "image": "https://joinccc.org/logos/ccc-logo-blue-fullres.png",
+  "url": "https://www.joinccc.org",
+  "logo": "https://www.joinccc.org/logos/ccc-logo-blue-fullres.png",
+  "image": "https://www.joinccc.org/logos/ccc-logo-blue-fullres.png",
   "telephone": "+18885822282",
   "faxNumber": "+17142429802",
   "email": "contact@joinccc.org",
@@ -178,7 +178,7 @@ const organizationSchema = {
   "potentialAction": {
     "@type": "ApplyAction",
     "name": "Apply for CalAIM Housing Support",
-    "target": "https://joinccc.org/apply-now",
+    "target": "https://www.joinccc.org/apply-now",
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -262,7 +262,7 @@ const howToSchema = {
       "position": 1,
       "name": "Apply Online",
       "text": "Fill out the online application in about five minutes. You'll need your name, contact info, IEHP ID, and a brief description of your current housing situation.",
-      "url": "https://joinccc.org/apply-now",
+      "url": "https://www.joinccc.org/apply-now",
     },
     {
       "@type": "HowToStep",
@@ -294,14 +294,14 @@ const howToSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://joinccc.org/#website",
+  "@id": "https://www.joinccc.org/#website",
   "name": "California Care Coordinators",
   "alternateName": "CCC",
-  "url": "https://joinccc.org",
+  "url": "https://www.joinccc.org",
   "description": "California Care Coordinators provides qualifying Medi-Cal recipients with free housing navigation, Enhanced Care Management, and CalAIM Community Supports in Southern California.",
   "publisher": {
     "@type": "Organization",
-    "@id": "https://joinccc.org/#organization",
+    "@id": "https://www.joinccc.org/#organization",
   },
 };
 
@@ -310,7 +310,7 @@ const servicesListSchema = {
   "@type": "ItemList",
   "name": "CalAIM Community Supports Services",
   "description": "Free housing and healthcare coordination services available to qualifying Medi-Cal members through California Care Coordinators in Southern California.",
-  "url": "https://joinccc.org",
+  "url": "https://www.joinccc.org",
   "numberOfItems": 6,
   "itemListElement": [
     {
