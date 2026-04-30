@@ -46,6 +46,8 @@ export default function ApplicationForm() {
     e.preventDefault();
     setStatus("sending");
     try {
+      const turnstileToken =
+        (document.querySelector('#application-form [name="cf-turnstile-response"]') as HTMLInputElement | null)?.value || "";
       const res = await fetch("https://forms.caltechweb.com/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -56,6 +58,7 @@ export default function ApplicationForm() {
           phone: form.phone,
           email: form.email,
           message: `Address: ${form.address}, ${form.city}, ${form.state} ${form.zip} | IEHP ID: ${form.iehpId} | Housing Status: ${form.housingStatus} | Chronic Condition: ${form.chronicCondition} | Additional Info: ${form.additionalInfo}`,
+          turnstileToken,
         }),
       });
       if (res.ok) {
@@ -94,7 +97,7 @@ export default function ApplicationForm() {
   const labelClass = "block text-sm font-medium text-[#1E2828] mb-1";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form id="application-form" onSubmit={handleSubmit} className="space-y-6">
       {/* Personal Info */}
       <div>
         <h3 className="font-semibold text-[#23779B] mb-4 pb-2 border-b border-gray-100">Personal Information</h3>
@@ -190,6 +193,8 @@ export default function ApplicationForm() {
       <p className="text-xs text-gray-600 leading-relaxed">
         Your information is protected under HIPAA and the California Consumer Privacy Act (CCPA). CCC will never share your personal information without your consent. By submitting this form, you consent to be contacted by a CCC representative regarding your application.
       </p>
+
+      <div className="cf-turnstile" data-sitekey="0x4AAAAAADF_j9QV2ATgnEKR"></div>
 
       {status === "error" && (
         <p className="text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3">
